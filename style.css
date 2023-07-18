@@ -1,4 +1,7 @@
+
+
 body {
+    min-height: 100vh;
     background-color:  rgb(14,33,121);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

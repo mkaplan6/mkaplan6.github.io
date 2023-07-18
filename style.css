@@ -1,14 +1,12 @@
 body {
     background-color:  rgb(14,33,121);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
     color: white;
 }
 
 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
 }

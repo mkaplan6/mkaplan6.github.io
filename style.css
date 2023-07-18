@@ -13,3 +13,8 @@ h1 {
 p {
     color: white;
 }
+
+#image1 {
+    float: left;
+    margin: 0 0 0 15px;
+}

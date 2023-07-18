@@ -12,16 +12,10 @@ h1 {
 
 p {
     color: white;
+    font-size: 20;
 }
 
-#image1 {
+img {
     float: right;
     margin-top: 100px;
-}
-
-#textbox {
-    width: 300px;
-    height: 300px;
-    padding: 50px;
-    box-sizing: border-box;
 }

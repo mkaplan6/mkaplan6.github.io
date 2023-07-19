@@ -27,3 +27,7 @@ function generateQuote() {
     document.getElementById("quoteDisplay").innerHTML = quotes[randomNumber];
 }
 
+window.onload = function() {
+    generateQuote();
+}
+

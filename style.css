@@ -37,7 +37,7 @@ h2 {
 p {
     color: white;
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
     margin-left: 20px;
 }
 
@@ -45,4 +45,5 @@ p {
     float: right;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 50px;
 }

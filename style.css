@@ -42,7 +42,7 @@ p {
 }
 
 #image1 {
-    float: right;
+    float: left;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 50px;

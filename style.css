@@ -1,4 +1,21 @@
+.navbar {
+    background-color: aqua;
+    overflow: hidden;
+}
 
+.navbar a {
+    float: left;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background-color: deeppink;
+    color: white;
+}
 
 body {
     min-height: 100vh;

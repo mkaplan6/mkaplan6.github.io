@@ -13,5 +13,7 @@ function generateQuote() {
     document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
 }
 
-generateQuote();
+window.onload = function() {
+    generateQuote();
+}
 

@@ -26,7 +26,7 @@
 
 .headerlink a:hover {
     background-color: deeppink;
-    color: deeppink
+    color: white;
 }
 
 body {
@@ -48,10 +48,6 @@ h2 {
 h3 {
     color: white;
     margin-left: 20px;
-}
-h3 a:hover {
-    color:white;
-    background-color: deeppink;
 }
 
 p {

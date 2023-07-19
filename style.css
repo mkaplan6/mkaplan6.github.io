@@ -7,6 +7,7 @@
     float: left;
     color: white;
     text-align: justify;
+    display: inline;
     padding: 16px;
     text-decoration: none;
     font-size: 20px;
@@ -23,6 +24,7 @@
 }
 
 .headerlink a:hover {
+    background-color: deeppink;
     color: white;
 }
 

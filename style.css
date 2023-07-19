@@ -18,6 +18,16 @@
     color: white;
 }
 
+.headerlink {
+    background-color: rgb(22, 206, 206);
+    overflow: hidden;
+}
+
+.headerlink a:hover {
+    background-color: deeppink;
+    color: white;
+}
+
 body {
     min-height: 100vh;
     background-color:  rgb(14,33,121);

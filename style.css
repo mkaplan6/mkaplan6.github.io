@@ -76,3 +76,14 @@ p {
     height: 150px;
     vertical-align: middle;
 }
+
+#image3 {
+    float: right;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+    width: 130px;
+    height: 130px;
+    vertical-align: middle;
+}

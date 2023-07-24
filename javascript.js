@@ -21,7 +21,13 @@ var quotes = [
     "\"Ooh wee ooh I look just like Buddy Holly.\" -River Cuomo, from \"Buddy Holly\" by Weezer",
     "\"Cowabunga dude, so let's get it on. Reptiles against the fathers of the Renaissance.\" -Leonardo Da Vinci, Epic Rap Battles of History",
     "\"Our greatest glory is not in never failing, but in rising every time we fall.\" -Confucius",
-    "\"I shall find a way or make one.\" -Hannibal"
+    "\"I shall find a way or make one.\" -Hannibal",
+    "\"Maybe we could have dinner. Perhaps the Olive Garden!\" -Cinnamon J. Scudworth",
+    "\"Happiness will never come to those who fail to appreciate what they already have.\" -The Buddha",
+    "\"Pain is inevitable. Suffering is optional.\" -The Buddha",
+    "\"Every morning we are born again. What we do today is what matters most.\" -The Buddha",
+    "\"Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.\" -The Buddha",
+    "\"You are what you believe in. You become that which you believe you can become.\" -from the Bhagavad Gita"
 ]
 
 function generateQuote() {

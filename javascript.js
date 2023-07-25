@@ -23,6 +23,7 @@ var quotes = [
     "\"Our greatest glory is not in never failing, but in rising every time we fall.\" -Confucius",
     "\"I shall find a way or make one.\" -Hannibal",
     "\"Maybe we could have dinner. Perhaps the Olive Garden!\" -Cinnamon J. Scudworth",
+    "\"I haven't been to the Olive Garden in like forever!\" -Cinnamon J. Scudworth",
     "\"Happiness will never come to those who fail to appreciate what they already have.\" -The Buddha",
     "\"Pain is inevitable. Suffering is optional.\" -The Buddha",
     "\"Every morning we are born again. What we do today is what matters most.\" -The Buddha",

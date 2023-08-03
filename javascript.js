@@ -18,7 +18,7 @@ var quotes = [
     "\"A skeleton walks into a bar and asks for a beer and a mop.\" -unknown",
     "\"Why can't you trust atoms? Because they make up everything.\" -my high school chemistry teacher",
     "\"A guy walks into a bar...and he was disqualified from the limbo contest.\" -unknown",
-    "\"Ooh wee ooh I look just like Buddy Holly.\" -River Cuomo, from \"Buddy Holly\" by Weezer",
+    "\"Ooh wee ooh I look just like Buddy Holly.\" -Rivers Cuomo, from \"Buddy Holly\" by Weezer",
     "\"Cowabunga dude, so let's get it on. Reptiles against the fathers of the Renaissance.\" -Leonardo Da Vinci, Epic Rap Battles of History",
     "\"Our greatest glory is not in never failing, but in rising every time we fall.\" -Confucius",
     "\"I shall find a way or make one.\" -Hannibal",

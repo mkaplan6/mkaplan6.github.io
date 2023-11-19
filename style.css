@@ -4,8 +4,7 @@ html {
 
 .navbar {
     background-color: rgb(35, 151, 151);
-    /*overflow: hidden;*/
-    position: fixed;
+    overflow: hidden;
 }
 
 .navbar a {
@@ -18,7 +17,6 @@ html {
     font-size: 20px;
     font-weight: bold;
     margin: 0;
-    position: fixed;
 }
 
 .navbar a:hover {

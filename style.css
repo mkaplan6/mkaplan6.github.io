@@ -6,6 +6,9 @@ html {
     background-color: rgb(35, 151, 151);
     overflow: hidden;
     position: sticky;
+}
+
+.navbar a {
     float: left;
     color: white;
     text-align: justify;
@@ -17,7 +20,7 @@ html {
     margin: 0;
 }
 
-.navbar :hover {
+.navbar a:hover {
     background-color: deeppink;
     color: white;
 }

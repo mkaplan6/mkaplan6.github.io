@@ -4,8 +4,8 @@ html {
 
 .navbar {
     background-color: rgb(35, 151, 151);
-    overflow: hidden;
-    position: sticky;
+    /*overflow: hidden;*/
+    position: fixed;
 }
 
 .navbar a {
@@ -18,7 +18,7 @@ html {
     font-size: 20px;
     font-weight: bold;
     margin: 0;
-    position: sticky;
+    position: fixed;
 }
 
 .navbar a:hover {

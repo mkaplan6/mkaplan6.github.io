@@ -5,6 +5,7 @@ html {
 .navbar {
     background-color: rgb(35, 151, 151);
     overflow: hidden;
+    position: fixed;
 }
 
 .navbar a {

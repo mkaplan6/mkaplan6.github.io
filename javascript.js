@@ -28,7 +28,9 @@ var quotes = [
     "\"Pain is inevitable. Suffering is optional.\" -The Buddha",
     "\"Every morning we are born again. What we do today is what matters most.\" -The Buddha",
     "\"Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.\" -The Buddha",
-    "\"You are what you believe in. You become that which you believe you can become.\" -from the Bhagavad Gita"
+    "\"You are what you believe in. You become that which you believe you can become.\" -from the Bhagavad Gita",
+    "\"In the darkest times, hope is something you give yourself. That is the meaning of inner strength.\" -Uncle Iroh",
+    "\"Pride is not the opposite of shame, but its source. True humility is the only antidote to shame.\" -Uncle Iroh"
 ]
 
 function generateQuote() {

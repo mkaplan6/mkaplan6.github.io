@@ -127,6 +127,78 @@ interface Primate {
     tail: Tails,
 }
 
+var primateIndex = 0;
+var yourPrimate: Primate;  
+var primates: Primate[] = [] as const; 
+let arr_len = primates.length;
+
+function SetupPrimateGame() {
+    //when play pressed
+    primateIndex = Math.floor(Math.random() * (arr_len + 1));
+    yourPrimate = primates[primateIndex];
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Attach the onclick event after the DOM has fully loaded
+    const button = document.getElementById("primateStartButton");
+    
+    if (button) { // Ensure button is not null
+        button.onclick = SetupPrimateGame;
+    }
+});
+
+
+function GuessPrimate(guess: string, num_guesses: number) {
+
+    if (yourPrimate.name.toLowerCase() == guess.toLowerCase()) {
+        //display some text saying YOU GOT IT!
+        //then display some PLAY AGAIN text
+        return;
+    }
+
+    for (let i = 0; i < arr_len; i++) {
+        let currPrimate = primates[i];
+        if (primates[i].name.toLocaleLowerCase() == guess.toLocaleLowerCase()) {
+            //then compare attributes of your primate and your guess
+            if (yourPrimate.name == currPrimate.name) {
+                //
+            }
+            if (yourPrimate.group == currPrimate.group) {
+                //
+            }
+            if (yourPrimate.place == currPrimate.place) {
+                //
+            }
+            if (yourPrimate.time == currPrimate.time) {
+                //
+            }
+            if (yourPrimate.diet == currPrimate.diet) {
+                //
+            }
+            if (yourPrimate.dentalFormula == currPrimate.dentalFormula) {
+                //
+            }
+            if (yourPrimate.tail == currPrimate.tail) {
+                //
+            }
+            num_guesses--;
+            if (num_guesses == 0) {
+                //display the answer and restart
+            }
+            //change some text to display num guesses
+            return
+        }
+        //if we get here:
+        //change text to say "NO PRIMATE FOUND"
+        num_guesses--;
+        if (num_guesses == 0) {
+            //display the answer and restart
+        }
+        //change some text to display num guesses
+        return; 
+    }
+}
+
 // const gorilla: Primate = {
 //     name: "gorilla",
 //     group: Group.Ape,

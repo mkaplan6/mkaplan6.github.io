@@ -1,3 +1,5 @@
+import { Primate, gorilla, chimp } from "./primate_data.js";
+
 var quotes = [
     "\"You can dance in the rain or sulk in the rain. It will rain regardless.\" -William Mulligan",
     "\"Hello there.\" -Mark Hoppus, from \"I Miss You\" by blink-182",
@@ -48,111 +50,68 @@ window.onload = function() {
     generateQuote();
 }
 
-// START OF PRIMATE GAME CODE
-
-enum Group {
-    Hominin,
-    Ape,
-    Cercopith,
-    Platyrrhine,
-    Tarsier,
-    Lemur_loris,
-}
-
-enum Places {
-    Europe,
-    Asia,
-    Africa,
-    Americas,
-}
-
-enum Times {
-    Miocene,
-    Pliocene,
-    Pleistocene,
-    Present
-}
-
-enum Diets {
-    Fruit,
-    Leaves,
-    Nuts,
-    Meat,
-    Fruit_and_leaves,
-    Hard_dry_foods,
-    Omnivorous,
-}
-
-enum DentalFormula {
-    D2133,
-    D2123,
-}
-
-enum TeethType {
-    RobustMolars,
-    LargeCanines,
-}
-
-enum Pelvis {
-    Wide, //hominin
-    Tall, //ape
-    Narrow, //monkey
-}
-
-enum Locomotion {
-    FacultativeBiped,
-    ObligateBiped,
-    Quadrupedal,
-    KnuckleWalker,
-}
-
-enum Tails {
-    None,
-    Prehensile,
-    Normal,
-}
-
-interface Primate {
-    name: string,
-    group: Group,
-    place: Places,
-    time: Times,
-    diet: Diets,
-    dentalFormula: DentalFormula,
-    //teeth: TeethType,
-    //skull: string,
-    //body: string,
-    pelvis: string,
-    locomotion: Locomotion,
-    tail: Tails,
-}
-
+// START OF PRIMATE GAME CODE ---------------------------------------------------------------------------
 var primateIndex = 0;
 var yourPrimate: Primate;  
-var primates: Primate[] = [] as const; 
+var primates: Primate[] = [gorilla, chimp]; 
 let arr_len = primates.length;
 
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById("primateStartButton");
+    
+    if (button) { button.onclick = GameButtonPressed; }
+});
+
+function GameButtonPressed() {
+    const startButton = document.getElementById("primateStartButton");
+    
+    if (startButton?.textContent == "PLAY!") {
+        SetupPrimateGame();
+    } else {
+        let guess = document.getElementById("guessBox")?.textContent
+        if (!guess) { guess = "none"}
+        let num_guesses = document.getElementById("numGuesses")?.textContent
+        if (!num_guesses) { num_guesses = "0" }
+        let num_guesses_Int = parseInt(num_guesses)
+        GuessPrimate(guess, num_guesses_Int)
+    }
+}
+
 function SetupPrimateGame() {
+    console.log("Play pressed");
+
     //when play pressed
     primateIndex = Math.floor(Math.random() * (arr_len + 1));
     yourPrimate = primates[primateIndex];
-}
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Attach the onclick event after the DOM has fully loaded
-    const button = document.getElementById("primateStartButton");
-    
-    if (button) { // Ensure button is not null
-        button.onclick = SetupPrimateGame;
+    //setup the HTML
+    const input = document.getElementById("guessBox") as HTMLInputElement;
+    if (input != null) {
+        input.style.visibility = "visible";
+        input.value = "";
     }
-});
-
+    const button = document.getElementById("primateStartButton");
+    if (button != null) {
+        button.textContent = "Confirm Guess";
+    }
+    const guesses = document.getElementById("numGuesses");
+    if (guesses != null) {
+        guesses.style.visibility = "visible";
+    }
+}
 
 function GuessPrimate(guess: string, num_guesses: number) {
 
+    console.log(guess);
+    console.log(yourPrimate);
+
     if (yourPrimate.name.toLowerCase() == guess.toLowerCase()) {
-        //display some text saying YOU GOT IT!
-        //then display some PLAY AGAIN text
+        console.log("Success");
+
+        const guesses = document.getElementById("numGuesses");
+        if (guesses != null) {
+            guesses.textContent = "You got it! The primate was " + yourPrimate + " and you had " + num_guesses + " remaining.";
+        }
         return;
     }
 
@@ -160,9 +119,6 @@ function GuessPrimate(guess: string, num_guesses: number) {
         let currPrimate = primates[i];
         if (primates[i].name.toLocaleLowerCase() == guess.toLocaleLowerCase()) {
             //then compare attributes of your primate and your guess
-            if (yourPrimate.name == currPrimate.name) {
-                //
-            }
             if (yourPrimate.group == currPrimate.group) {
                 //
             }
@@ -194,77 +150,10 @@ function GuessPrimate(guess: string, num_guesses: number) {
         if (num_guesses == 0) {
             //display the answer and restart
         }
-        //change some text to display num guesses
+        const guesses = document.getElementById("numGuesses");
+        if (guesses != null) {
+            guesses.textContent = String(num_guesses - 1);
+        }
         return; 
     }
 }
-
-// const gorilla: Primate = {
-//     name: "gorilla",
-//     group: Group.Ape,
-//     place: Places.Africa,
-//     time: Times.Present,
-//     diet: Diets.Leaves,
-//     dentalFormula: DentalFormula.D2123,
-//     //teeth: TeethType,
-//     //skull: string,
-//     //body: string,
-//     //pelvis: string,
-//     //legs: string,
-//     tail: Tails.None,
-// };
-
-/*
-include:
-
-Present----
-human
-gorilla
-chimp
-bonobo
-orangutan
-gibbon
-siamang
-
-baboon
-mandrill
-macaque
-
-colobus
-spider
-capuchin
-howler
-tamarin
-squirrel
-
-tarsier
-lemur
-loris
-
-Pleisto---
-Homo neanderthalensis
-Homo erectus
-Homo habilis
-Paranthropus robustus
-Paranthropus boisei
-Australopithecus sediba
-Australopithecus garhi
-Australopithecus africanus
-
-Plio--5-3 mya
-Australopithecus afarensis
-Australopithecus anamensis
-Ardipithecus ramidus
-Ardipithecus kadabba
-
-Mio--
-Orrorin tugenesis
-Sahelanthropus tchadensis
-Gigantopithecus
-Dryopithecus
-Sivapithecus
-Oreopithecus
-Ouranopithecus
-Proconsul
-
-*/

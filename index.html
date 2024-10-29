@@ -144,25 +144,26 @@
 
         <p>Website created in July of 2023 from scratch using HTML, CSS, and JavaScript/Typescript. Hosted using GitHub Pages. Last updated in March of 2024. Based on an earlier version of the site I created using the React framework in November of 2022. All pieces of media on this site are either created by me or in the public domain. Royalty free images from Pexels or Pixabay. </p>
 
-        <!-- <h3>Guess the Primate Game! "Chimpdle"</h3>
-        <button id="primateStartButton" style="width: 15%; height: 50px; margin: 10px; ">
-            PLAY!
-        </button>
-
-        <script>
-            
-        </script>  -->
-
+        <!--QUOTE GENERATION CODE-->
         <h3 id="quoteDisplay">Quote Here</h3>
-        <script>
-            document.getElementById("quoteDisplay").innerHTML = generateQuote();
-        </script>
+        <script>document.getElementById("quoteDisplay").innerHTML = generateQuote();</script>
         <p>(Try refreshing the page and checking this again.)</p>
-        <HR SIZE="2" width="100%"
-        <p>(This isn't even going to be visible under the navbar. You'll never see this.)</p>
-        <HR SIZE="2" width="100%"
+        
+        
+        <!--MONKEY GAME CODE-->
+        <!-- <h3>Guess the Primate Game! "Chimpdle"</h3>
+        <button id="primateStartButton" style="width: 15%; height: 50px; margin: 10px; ">PLAY!</button>
+        <input type="text" id="guessBox" placeholder="Guess" style="visibility: hidden;"/>
+        <p id="numGuesses" style="visibility: hidden;">Guesses Remaining: 6</p>
+        
+        <p>- </p>
+        <p>- </p>
+        <p>- </p>
+
+        <HR SIZE="2" width="100%"> -->
+ 
     </div>
-    <script src="backend.js"></script>
+    <script type="module" src="./dist/backend.js"></script>
 
 </body>
 </html>

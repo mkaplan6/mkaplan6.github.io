@@ -1,22 +1,32 @@
 
 <!DOCTYPE html>
-<head>
-    <title>Malcolm Kaplan</title>
-    <link rel="shortcut icon" type="image/x-ico" href="assets/SDG_logo.ico">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 <html>
+<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 <body>
+
+<div>
     <navbar>
-        <div class="navbar">
+        <div class="navbar" id="nav">
             <a class="active" href="">Home</a>
             <a href="#Experience">Experience</a>
             <a href="#Projects">Projects</a>
             <a href="#Activities">Activities</a>
-            <a href="#Links">Links</a>
             <a href="#More">More</a>
-    </div>
+
+            <div class="right-links">            
+                <a href=assets/Resume.pdf target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href=https://www.linkedin.com/in/malcolm-kaplan/ target="_blank" rel="noopener noreferrer">Linkedin</a>
+            </div>
+        </div>
     </navbar>
+</div>
+
+<div class="everything_else">
+    <head>
+        <title>Malcolm Kaplan</title>
+        <link rel="shortcut icon" type="image/x-ico" href="assets/SDG_logo.ico">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
     <HR SIZE="2" WIDTH="100%">
 
@@ -33,7 +43,7 @@
     <div id="Experience">
         <h2>Work Experience</h2>
 
-        <div class="content">
+        <div class="content" id="avtech">
             <div class="headerlink">
                 <a href=https://www.avtechcorp.com/ target="_blank" rel="noopener noreferrer">
                 <h3>Software Engineering Intern at AvTech Corp.</h3></a>
@@ -45,7 +55,7 @@
             My most interesting projects have been an interactive map web console in Typescript that displays real-time locations of buses, a backend service in C# to parse bus location information from a database and calculate estimated arrival times, a Python application that efficiently and securely communicates with proximity beacons via LoRaWAN technology, and a VBA (Excel) schedule generator to help airport staff to assign van drivers to service flights throughout the workday given a set of constraints. I often also actively communicate with clients and write up detailed project reports to guide users through setup and execution of the programs.</p>
         </div>
 
-        <div class="content">
+        <div class="content" id="233">
             <div class="headerlink">
                 <a href=https://cs.illinois.edu/academics/courses/cs233 target="_blank" rel="noopener noreferrer">
                 <h3>Computer Architecture (CS 233) Course Assistant at UIUC</h3></a>
@@ -56,7 +66,7 @@
             </p>
         </div>
         
-        <div class="content">
+        <div class="content" id="173">
             <div class="headerlink">
                 <a href=https://courses.grainger.illinois.edu/cs173/sp2023/ALL-lectures/ target="_blank" rel="noopener noreferrer">
                 <h3>Discrete Structures (CS 173) Course Assistant at UIUC</h3></a>
@@ -72,7 +82,7 @@
     <div id="Projects">
         <h2>Projects</h2>
 
-        <div class="content">
+        <div class="content" id="os">
             <div class="headerlink">
                 <!-- <a href=https://github.com/zuyouchen/225-final-proj target="_blank" rel="noopener noreferrer"> -->
                 <h3>Linux-Like Operating System</h3><!--</a>-->
@@ -82,7 +92,7 @@
             In Spring of 2024, I led a team of 4 engineers over 8 weeks to construct a simplified Linux-like operating system (or kernel) from scratch in C and x86 Assembly. The final product (with over 13,000 lines of code) was a system that functions almost like a real kernel would. To implement it, we started with the basics: getting the system to boot by initializing the appropriate kernel-level data structures and initializing the hardware devices that handle interrupts. We then developed comprehensive device drivers for the keyboard, terminal, real-time clock, and timer. We implemented features to ensure security and speed, including virtual memory and file system abstractions. And the pièce de résistance of the project was support for running multiple processes simultaneously, including scheduling, system calls, and interrupt handling. </p>
         </div>
 
-        <div class="content">
+        <div class="content" id="elden">
             <div class="headerlink">
                 <a href=https://github.com/zuyouchen/225-final-proj target="_blank" rel="noopener noreferrer">
                 <h3>Elden Ring Speedrun Optimizer</h3></a>
@@ -92,7 +102,7 @@
             In Spring of 2023, I and a few friends created a C++ program that reads in data from the Elden Ring map and calculates an optimal speedrunning route using various modifications of graph traversal algorithms like Dijkstra's and Floyd-Warshall. The algorithms find shortest paths between nodes while simultaneously accounting for all the intricacies of the video game and enforcing certain pathways (you can't fight Radahn without visiting Altus first!). In the end, the calculated times for our routes were within 5% of actual speedrun world records! Finally, using the path we calculated, we used Python and Matplotlib to visualize the route via a path drawn over the actual Elden Ring map. I've tried the route myself in-game and it works pretty well! </p>
         </div>
 
-        <div class="content">
+        <div class="content" id="tud">
             <div class="headerlink">
                 <a href=https://github.com/mkaplan6/Tud-sRotundJourney target="_blank" rel="noopener noreferrer">
                 <h3>"Tud's Rotund Journey" (A PyGame)</h3></a>
@@ -101,33 +111,34 @@
             <img src="assets/tuds.gif" alt="Tud's Rotund Journey Game" id="image2">
             Tud's Rotund Journey is a goofy game I developed in Summer 2022. I'm no artist, but I drew all of the sprites and backgrounds, recorded the sounds, and programmed the entire thing in the Python library PyGame.</p>
         </div>
-
-        <div class="content">
-            <div class="headerlink">
-                <h3>Machine Learning Model for Estimating CPU Performance</h3>
-            </div>
-            <p style="display: inline-block;">
-            In November of 2023, I created a machine learning model that estimates the performance of a CPU given statistics such as the size of the cache and the number of memory channels using Python, Pandas, and Scikit-Learn.</p>
-        </div>
-
-        <div class="content">
-            <div class="headerlink">
-                <!-- <a href=https://github.com/mkaplan6/SOSPchatbot target="_blank" rel="noopener noreferrer"> -->
-                <h3>Discord Chat Bot</h3><!--</a>-->
-            </div>
-            <p style="display: inline-block;">
-            <!-- <img src="assets/chatbot.png" alt="Chatbot" id="image2">   -->
-            In Summer of 2022, I developed a Discord chat bot that can hold a (somewhat sensible) conversation by parsing and reacting to words a user sends, and can access and send files. This was all possible with Discord's API tools and the Python programming language.</p>
-        </div>
-
-        <HR SIZE="2" width="100%">
+        
     </div>
+
+    <div class="content" id="ml">
+        <div class="headerlink">
+            <h3>Machine Learning Model for Estimating CPU Performance</h3>
+        </div>
+        <p style="display: inline-block;">
+        In November of 2023, I created a machine learning model that estimates the performance of a CPU given statistics such as the size of the cache and the number of memory channels using Python, Pandas, and Scikit-Learn.</p>
+    </div>
+
+    <div class="content" id="chat">
+        <div class="headerlink">
+            <!-- <a href=https://github.com/mkaplan6/SOSPchatbot target="_blank" rel="noopener noreferrer"> -->
+            <h3>Discord Chat Bot</h3><!--</a>-->
+        </div>
+        <p style="display: inline-block;">
+        <!-- <img src="assets/chatbot.png" alt="Chatbot" id="image2">   -->
+        In Summer of 2022, I developed a Discord chat bot that can hold a (somewhat sensible) conversation by parsing and reacting to words a user sends, and can access and send files. This was all possible with Discord's API tools and the Python programming language.</p>
+    </div>
+
+    <HR SIZE="2" width="100%">
 
     
     <div id="Activities">
         <h2>Activities</h2>
 
-        <div class="content">
+        <div class="content" id="acm">
             <div class="headerlink">
                 <a href=https://www.acm.illinois.edu/ target="_blank" rel="noopener noreferrer">
                 <h3>Association for Computing Machinery (ACM) at UIUC</h3></a>
@@ -150,20 +161,6 @@
         <HR SIZE="2" width="100%">
     </div>
 
-    <div id="Links">
-        <h2>Links</h2>
-        <div class="headerlink">
-            <a href=assets/Resume.pdf target="_blank" rel="noopener noreferrer">
-            <h3>Resume</h3></a>
-        </div>
-
-        <div class="headerlink">
-            <a href=https://www.linkedin.com/in/malcolm-kaplan-464422242/ target="_blank" rel="noopener noreferrer">
-            <h3>Linkedin</h3></a>
-        </div>
-        <HR SIZE="2" width="100%">
-    </div>
-
     <div id="More">
         <h2>More</h2>
         <p>If I'm not doing any of the above activites, I'm probably playing some instrument (drums, guitar, or piano) or some challenging video game (Elden Ring, Dark Souls, Sekiro, Hollow Knight, Hades, Dead Cells, and others). I can also roll a quarter across my knuckles like Val Kilmer, I know the locations of all 193 U.N. countries on the world map, and if you send me a picture of any random primate, I can probably tell you what species it is.</p>
@@ -171,10 +168,18 @@
         <p>Website created in July of 2023 from scratch using HTML, CSS, and JavaScript/Typescript. Hosted using GitHub Pages. Last updated in March of 2024. Based on an earlier version of the site I created using the React framework in November of 2022. All pieces of media on this site are either created by me or in the public domain. Royalty free images from Pexels or Pixabay. </p>
 
         <!--QUOTE GENERATION CODE-->
+        <h2>Some of my Favorite Quotes:</h2>
+
         <h3 id="quoteDisplay">Quote Here</h3>
         <script>document.getElementById("quoteDisplay").innerHTML = generateQuote();</script>
-        <p>(Try refreshing the page and checking this again.)</p>
+
+        <h3 id="quoteDisplay2">Quote Here</h3>
+        <script>document.getElementById("quoteDisplay2").innerHTML = generateQuote();</script>
+
+        <h3 id="quoteDisplay3">Quote Here</h3>
+        <script>document.getElementById("quoteDisplay3").innerHTML = generateQuote();</script>
         
+        <button id="quoteRefresh" class="buttons">Generate new quotes!</button>
         
         <!--MONKEY GAME CODE-->
         <!-- <h3>Guess the Primate Game! "Chimpdle"</h3>
@@ -187,9 +192,9 @@
         <p>- </p>
 
         <HR SIZE="2" width="100%"> -->
- 
     </div>
     <script type="module" src="./dist/backend.js"></script>
+</div>
 
 </body>
 </html>

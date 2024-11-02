@@ -2,11 +2,19 @@ import { Primate, gorilla, chimp } from "./primate_data.js";
 
 function isInViewport(element: Element): boolean {
     const rect = element.getBoundingClientRect();
-    return ( rect.top <= (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0 );
+    return ( rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 50 && rect.bottom >= -50 );
+}
+
+function RemoveAllActive() {
+    const navLinks = document.querySelectorAll('.navbar a');
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].classList.remove('active');
+    }
 }
 
 function onScroll(): void {
     const elements = document.querySelectorAll('.content');
+    const navLinks = document.querySelectorAll('.navbar a');
     elements.forEach(element => {
         let html_element = element as HTMLElement;
         if (isInViewport(element)) {
@@ -17,10 +25,29 @@ function onScroll(): void {
             html_element.style.opacity = "0";
             html_element.style.transform = "translateY(100px)";  
         }
+
+        //check for which section we're in
+        if (isInViewport(document.getElementById("image1"))) {
+            RemoveAllActive();
+            navLinks[0].classList.add('active');
+        } else if (isInViewport(document.getElementById("avtech")) || isInViewport(document.getElementById("233"))) {
+            RemoveAllActive();
+            navLinks[1].classList.add('active');
+        } else if (isInViewport(document.getElementById("Projects"))) {
+            RemoveAllActive();
+            navLinks[2].classList.add('active');
+        } else if (isInViewport(document.getElementById("acm"))) {
+            RemoveAllActive();
+            navLinks[3].classList.add('active');
+        } else if (isInViewport(document.getElementById("More"))) {
+            RemoveAllActive();
+            navLinks[4].classList.add('active');
+        }
     });
 }
 
 window.addEventListener('scroll', onScroll);
+window.addEventListener('resize', onScroll);
 document.addEventListener('DOMContentLoaded', () => { onScroll(); });
 
 var quotes = [
@@ -34,7 +61,12 @@ var quotes = [
     "\"Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.\" -The Lorax",
     "\"It smells like updog in here.\" -unknown",
     "\"Live your life, Puss in Boots. Live it well.\" -Death",
-    "\"If you're going to trust anything, trust mergesort.\" -unknown",
+    "\"If you want to confuse your enemy, confuse yourself first.\" -Sun Tzu",
+    "\"It was also the night that the skeletons came to life. They came from under the ground. And from all over.\" -Tim Robinson",
+    "\"The bones are the skeletons' money, In our world, bones equal dollars, That’s why they’re coming out tonight, To get their bones from you.\" -Tim Robinson",
+    "\"The skeletons will pull your hair, Up, but not out, All they want is another chance at life, They’ve never seen so much food as this, Underground there’s half as much food as this\" -Tim Robinson",
+    "\"And the worms are their money, The bones are their dollars\" -Tim Robinson",
+    "\"But if they pull it out they turn to bones\ -Tim Robinson",
     "\"It's some kind of sin to live your whole life on a \'might have been.\' \" -Brandon Flowers, from \"Caution\" by The Killers",
     "\"What's the difference between a piano, a fish, and a hanger? You can tune a piano but you can't tuna fish. And I knew you'd be hung up on the hanger.\" -my high school calculus teacher",
     "\"Ah. I knew you'd come. To stand before the Elden Ring. To become Elden Lord\" -Sir Gideon Ofnir, the All-Knowing",
@@ -60,10 +92,16 @@ var quotes = [
 
 function generateQuote() {
     var randomNumber = Math.floor(Math.random() * quotes.length);
+    var randomNumber2 = Math.floor(Math.random() * quotes.length);
+    var randomNumber3 = Math.floor(Math.random() * quotes.length);
     var quoteDisplay = document.getElementById("quoteDisplay");
+    var quoteDisplay2 = document.getElementById("quoteDisplay2");
+    var quoteDisplay3 = document.getElementById("quoteDisplay3");
     
     if (quoteDisplay) {
         quoteDisplay.innerHTML = quotes[randomNumber];
+        quoteDisplay2.innerHTML = quotes[randomNumber2];
+        quoteDisplay3.innerHTML = quotes[randomNumber3];
     } else {
         console.error("Element with id 'quoteDisplay' not found.");
     }
@@ -72,6 +110,12 @@ function generateQuote() {
 window.onload = function() {
     generateQuote();
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById("quoteRefresh");
+    
+    if (button) { button.onclick = generateQuote; }
+});
 
 // START OF PRIMATE GAME CODE ---------------------------------------------------------------------------
 var primateIndex = 0;

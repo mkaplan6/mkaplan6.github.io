@@ -40,7 +40,7 @@ function onScroll() {
             RemoveAllActive();
             navLinks[3].classList.add('active');
         }
-        else {
+        else if (isInViewport(document.getElementById("More"))) {
             RemoveAllActive();
             navLinks[4].classList.add('active');
         }
@@ -91,7 +91,13 @@ var quotes = [
 function generateQuote() {
     var randomNumber = Math.floor(Math.random() * quotes.length);
     var randomNumber2 = Math.floor(Math.random() * quotes.length);
+    while (randomNumber2 == randomNumber) {
+        randomNumber2 = Math.floor(Math.random() * quotes.length);
+    }
     var randomNumber3 = Math.floor(Math.random() * quotes.length);
+    while (randomNumber3 == randomNumber || randomNumber3 == randomNumber2) {
+        randomNumber3 = Math.floor(Math.random() * quotes.length);
+    }
     var quoteDisplay = document.getElementById("quoteDisplay");
     var quoteDisplay2 = document.getElementById("quoteDisplay2");
     var quoteDisplay3 = document.getElementById("quoteDisplay3");

@@ -83,18 +83,20 @@ h1 {
 
 h2 {
     color: rgb(220, 220, 220);
-    margin-left: 20px;
+    margin-left: 21%;
     margin-bottom: 30px;
+    scale: 150%;
 }
 
 h3 {
     color: rgb(220, 220, 220);
-    margin-left: 20px;
+    margin-left: 10.5%;
+    scale: 120%;
 }
 
 p {
     color: rgb(220, 220, 220);
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
     margin-left: 20px;
     vertical-align: middle;

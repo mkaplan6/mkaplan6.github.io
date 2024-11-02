@@ -40,7 +40,7 @@ function onScroll() {
             RemoveAllActive();
             navLinks[3].classList.add('active');
         }
-        else if (isInViewport(document.getElementById("More"))) {
+        else {
             RemoveAllActive();
             navLinks[4].classList.add('active');
         }

@@ -10,12 +10,12 @@ function onScroll(): void {
     elements.forEach(element => {
         let html_element = element as HTMLElement;
         if (isInViewport(element)) {
-            html_element.style.opacity = "1";  // Set opacity to fully visible
-            html_element.style.transform = "translateY(0)";  // Optional for animation
-            html_element.style.transition = "opacity 0.5s ease, transform 0.5s ease";  // Smooth transition
+            html_element.style.opacity = "1"; 
+            html_element.style.transform = "translateY(0)"; 
+            html_element.style.transition = "opacity 0.5s ease, transform 0.5s ease"; 
         } else {
-            html_element.style.opacity = "0";  // Set opacity to invisible
-            html_element.style.transform = "translateY(100px)";  // Optional for animation
+            html_element.style.opacity = "0";
+            html_element.style.transform = "translateY(100px)";  
         }
     });
 }

@@ -1,4 +1,25 @@
 import { gorilla, chimp } from "./primate_data.js";
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (rect.top <= (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0);
+}
+function onScroll() {
+    const elements = document.querySelectorAll('.content');
+    elements.forEach(element => {
+        let html_element = element;
+        if (isInViewport(element)) {
+            html_element.style.opacity = "1"; // Set opacity to fully visible
+            html_element.style.transform = "translateY(0)"; // Optional for animation
+            html_element.style.transition = "opacity 0.5s ease, transform 0.5s ease"; // Smooth transition
+        }
+        else {
+            html_element.style.opacity = "0"; // Set opacity to invisible
+            html_element.style.transform = "translateY(100px)"; // Optional for animation
+        }
+    });
+}
+window.addEventListener('scroll', onScroll);
+document.addEventListener('DOMContentLoaded', () => { onScroll(); });
 var quotes = [
     "\"You can dance in the rain or sulk in the rain. It will rain regardless.\" -William Mulligan",
     "\"Hello there.\" -Mark Hoppus, from \"I Miss You\" by blink-182",

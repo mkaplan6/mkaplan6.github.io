@@ -65,7 +65,7 @@ var quotes = [
     "\"The bones are the skeletons' money, In our world, bones equal dollars, That’s why they’re coming out tonight, To get their bones from you.\" -Tim Robinson",
     "\"The skeletons will pull your hair, Up, but not out, All they want is another chance at life, They’ve never seen so much food as this, Underground there’s half as much food as this\" -Tim Robinson",
     "\"And the worms are their money, The bones are their dollars\" -Tim Robinson",
-    "\"But if they pull it out they turn to bones\ -Tim Robinson",
+    "\"But if they pull it out they turn to bones\" -Tim Robinson",
     "\"It's some kind of sin to live your whole life on a \'might have been.\' \" -Brandon Flowers, from \"Caution\" by The Killers",
     "\"What's the difference between a piano, a fish, and a hanger? You can tune a piano but you can't tuna fish. And I knew you'd be hung up on the hanger.\" -my high school calculus teacher",
     "\"Ah. I knew you'd come. To stand before the Elden Ring. To become Elden Lord\" -Sir Gideon Ofnir, the All-Knowing",

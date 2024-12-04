@@ -1,4 +1,4 @@
-import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
+import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, Habitats, SocialStructures, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 50 && rect.bottom >= -50);
@@ -172,6 +172,8 @@ var gottenDentalFormula = 0;
 var gottenPelvis = 0;
 var gottenLocomotion = 0;
 var gottenTails = 0;
+var gottenHabitat = 0;
+var gottenSocial = 0;
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("primateStartButton");
     if (button) {
@@ -234,6 +236,8 @@ function SetupPrimateGame() {
     gottenPelvis = 0;
     gottenLocomotion = 0;
     gottenTails = 0;
+    gottenHabitat = 0;
+    gottenSocial = 0;
 }
 function GuessPrimate(guess, num_guesses) {
     console.log(guess);
@@ -302,6 +306,18 @@ function GuessPrimate(guess, num_guesses) {
                 let curr_hint = numHints.toString();
                 document.getElementById("hint" + curr_hint).textContent = "Your mystery primate is a " + Locomotion[yourPrimate.locomotion] + ", just like " + currPrimate.name;
                 gottenLocomotion = 1;
+            }
+            if (yourPrimate.habitat == currPrimate.habitat && !gottenHabitat) {
+                numHints++;
+                let curr_hint = numHints.toString();
+                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate lives in a " + Habitats[yourPrimate.habitat] + " environment, just like " + currPrimate.name;
+                gottenHabitat = 1;
+            }
+            if (yourPrimate.socialStructure == currPrimate.socialStructure && !gottenSocial) {
+                numHints++;
+                let curr_hint = numHints.toString();
+                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate lives in " + SocialStructures[yourPrimate.socialStructure] + " societies, just like " + currPrimate.name;
+                gottenSocial = 1;
             }
             num_guesses--;
             document.getElementById("numGuesses").textContent = "Guesses Remaining: " + num_guesses.toString();

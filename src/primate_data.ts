@@ -5,14 +5,14 @@ export enum Group {
     Cercopith,
     Platyrrhine,
     Tarsier,
-    Lemur_loris,
+    Strepsirrhine,
 }
 
 export enum Places {
     Europe,
     Asia,
     Africa,
-    Americas,
+    America,
 }
 
 export enum Times {
@@ -46,14 +46,32 @@ export enum Pelvis {
 export enum Locomotion {
     FacultativeBiped,
     ObligateBiped,
-    Quadrupedal,
     KnuckleWalker,
+    ArborealQuadruped,
+    TerrestrialQuadruped,
+    Brachiator,
+    VerticalClingerAndLeaper,
 }
 
 export enum Tails {
     None,
     Prehensile,
     Normal,
+}
+
+export enum Habitats {
+    Forest,
+    Savannah,
+    Wetland,
+    Mountains,
+    Urban,
+}
+
+export enum SocialStructures {
+    Solitary,
+    PairBonded,
+    MultiMaleMultiFemale,
+    FissionFusion,
 }
 
 export interface Primate {
@@ -63,12 +81,11 @@ export interface Primate {
     time: Times,
     diet: Diets,
     dentalFormula: DentalFormula,
-    //teeth: TeethType,
-    //skull: string,
-    //body: string,
     pelvis: Pelvis,
     locomotion: Locomotion,
     tail: Tails,
+    habitat: Habitats,
+    socialStructure: SocialStructures,
 }
 
 export const human: Primate = {
@@ -81,8 +98,9 @@ export const human: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.ObligateBiped,
     tail: Tails.None,
+    habitat: Habitats.Urban,
+    socialStructure: SocialStructures.FissionFusion,
 };
-
 
 export const gorilla: Primate = {
     name: "gorilla",
@@ -94,6 +112,8 @@ export const gorilla: Primate = {
     pelvis: Pelvis.Tall,
     locomotion: Locomotion.KnuckleWalker,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const chimp: Primate = {
@@ -106,6 +126,8 @@ export const chimp: Primate = {
     pelvis: Pelvis.Tall,
     locomotion: Locomotion.KnuckleWalker,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const bonobo: Primate = {
@@ -118,6 +140,8 @@ export const bonobo: Primate = {
     pelvis: Pelvis.Tall,
     locomotion: Locomotion.KnuckleWalker,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const orangutan: Primate = {
@@ -128,8 +152,10 @@ export const orangutan: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const gibbon: Primate = {
@@ -140,8 +166,10 @@ export const gibbon: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.Brachiator,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.PairBonded,
 };
 
 export const siamang: Primate = {
@@ -152,8 +180,10 @@ export const siamang: Primate = {
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.Brachiator,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.PairBonded,
 };
 
 export const baboon: Primate = {
@@ -164,8 +194,10 @@ export const baboon: Primate = {
     diet: Diets.Omnivorous,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.TerrestrialQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Savannah,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const mandrill: Primate = {
@@ -176,8 +208,10 @@ export const mandrill: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.TerrestrialQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const macaque: Primate = {
@@ -188,8 +222,10 @@ export const macaque: Primate = {
     diet: Diets.Omnivorous,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.TerrestrialQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Mountains,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const colobus: Primate = {
@@ -200,68 +236,80 @@ export const colobus: Primate = {
     diet: Diets.Leaves,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const spider: Primate = {
-    name: "spider",
+    name: "spider monkey",
     group: Group.Platyrrhine,
-    place: Places.Americas,
+    place: Places.America,
     time: Times.Present,
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.Brachiator,
     tail: Tails.Prehensile,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const capuchin: Primate = {
     name: "capuchin",
     group: Group.Platyrrhine,
-    place: Places.Americas,
+    place: Places.America,
     time: Times.Present,
     diet: Diets.Omnivorous,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Prehensile,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const howler: Primate = {
-    name: "howler",
+    name: "howler monkey",
     group: Group.Platyrrhine,
-    place: Places.Americas,
+    place: Places.America,
     time: Times.Present,
     diet: Diets.Leaves,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Prehensile,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const tamarin: Primate = {
     name: "tamarin",
     group: Group.Platyrrhine,
-    place: Places.Americas,
+    place: Places.America,
     time: Times.Present,
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.PairBonded,
 };
 
 export const squirrel: Primate = {
-    name: "squirrel",
+    name: "squirrel monkey",
     group: Group.Platyrrhine,
-    place: Places.Americas,
+    place: Places.America,
     time: Times.Present,
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const tarsier: Primate = {
@@ -272,32 +320,38 @@ export const tarsier: Primate = {
     diet: Diets.Meat,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.VerticalClingerAndLeaper,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.PairBonded,
 };
 
 export const lemur: Primate = {
     name: "lemur",
-    group: Group.Lemur_loris,
+    group: Group.Strepsirrhine,
     place: Places.Africa,
     time: Times.Present,
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const loris: Primate = {
     name: "loris",
-    group: Group.Lemur_loris,
+    group: Group.Strepsirrhine,
     place: Places.Asia,
     time: Times.Present,
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2133,
     pelvis: Pelvis.Narrow,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const neanderthal: Primate = {
@@ -310,6 +364,8 @@ export const neanderthal: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.ObligateBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const erectus: Primate = {
@@ -322,6 +378,8 @@ export const erectus: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.ObligateBiped,
     tail: Tails.None,
+    habitat: Habitats.Savannah,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const habilis: Primate = {
@@ -334,6 +392,8 @@ export const habilis: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const robustus: Primate = {
@@ -346,6 +406,8 @@ export const robustus: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Savannah,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const boisei: Primate = {
@@ -358,6 +420,8 @@ export const boisei: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const sediba: Primate = {
@@ -370,6 +434,8 @@ export const sediba: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const garhi: Primate = {
@@ -382,6 +448,8 @@ export const garhi: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const africanus: Primate = {
@@ -394,6 +462,8 @@ export const africanus: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.FissionFusion,
 };
 
 export const afarensis: Primate = {
@@ -406,6 +476,8 @@ export const afarensis: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Savannah,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const anamensis: Primate = {
@@ -418,6 +490,8 @@ export const anamensis: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const ramidus: Primate = {
@@ -430,6 +504,8 @@ export const ramidus: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const kadabba: Primate = {
@@ -442,6 +518,8 @@ export const kadabba: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const orrorin: Primate = {
@@ -454,6 +532,8 @@ export const orrorin: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const sahelanthropus: Primate = {
@@ -466,6 +546,8 @@ export const sahelanthropus: Primate = {
     pelvis: Pelvis.Wide,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const gigantopithecus: Primate = {
@@ -476,8 +558,10 @@ export const gigantopithecus: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const dryopithecus: Primate = {
@@ -488,8 +572,10 @@ export const dryopithecus: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.Brachiator,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const sivapithecus: Primate = {
@@ -500,8 +586,10 @@ export const sivapithecus: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.Solitary,
 };
 
 export const oreopithecus: Primate = {
@@ -514,6 +602,8 @@ export const oreopithecus: Primate = {
     pelvis: Pelvis.Tall,
     locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
+    habitat: Habitats.Wetland,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const ouranopithecus: Primate = {
@@ -524,8 +614,10 @@ export const ouranopithecus: Primate = {
     diet: Diets.Fruit,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 
 export const proconsul: Primate = {
@@ -536,6 +628,8 @@ export const proconsul: Primate = {
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.ArborealQuadruped,
     tail: Tails.None,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
 };

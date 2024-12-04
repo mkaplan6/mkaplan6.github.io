@@ -460,7 +460,7 @@ export const oreopithecus = {
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Tall,
-    locomotion: Locomotion.Quadrupedal,
+    locomotion: Locomotion.FacultativeBiped,
     tail: Tails.None,
 };
 export const ouranopithecus = {

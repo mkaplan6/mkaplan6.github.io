@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function GameButtonPressed() {
     var _a;
     const startButton = document.getElementById("primateStartButton");
-    if ((startButton === null || startButton === void 0 ? void 0 : startButton.textContent) == "PLAY!") {
+    if (startButton === null || startButton === void 0 ? void 0 : startButton.textContent.toLowerCase().includes("play")) {
         SetupPrimateGame();
     }
     else {
@@ -215,7 +215,17 @@ function SetupPrimateGame() {
     const guesses = document.getElementById("numGuesses");
     if (guesses != null) {
         guesses.style.visibility = "visible";
+        guesses.textContent = "Guesses Remaining: 6";
     }
+    numHints = 0;
+    document.getElementById("hint1").textContent = "-";
+    document.getElementById("hint2").textContent = "-";
+    document.getElementById("hint3").textContent = "-";
+    document.getElementById("hint4").textContent = "-";
+    document.getElementById("hint5").textContent = "-";
+    document.getElementById("hint6").textContent = "-";
+    document.getElementById("hint7").textContent = "-";
+    document.getElementById("hint8").textContent = "-";
     gottenGroup = 0;
     gottenPlaces = 0;
     gottenTimes = 0;
@@ -233,6 +243,10 @@ function GuessPrimate(guess, num_guesses) {
         if (guesses != null) {
             num_guesses--;
             guesses.textContent = "You got it! The primate was " + yourPrimate.name + " and you had " + num_guesses.toString() + " guesses remaining.";
+        }
+        const button = document.getElementById("primateStartButton");
+        if (button != null) {
+            button.textContent = "Play Again!";
         }
         return;
     }

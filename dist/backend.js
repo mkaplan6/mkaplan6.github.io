@@ -260,8 +260,6 @@ function SetupPrimateGame() {
     gottenSocial = 0;
 }
 function GuessPrimate(guess, num_guesses) {
-    console.log(guess);
-    console.log(yourPrimate);
     //allow both answers
     if (guess == "chimp") {
         guess = "chimpanzee";

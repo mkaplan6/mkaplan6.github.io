@@ -1,4 +1,5 @@
 import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, Habitats, SocialStructures, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
+//!Basic functionality 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 50 && rect.bottom >= -50);
@@ -49,6 +50,7 @@ function onScroll() {
 window.addEventListener('scroll', onScroll);
 window.addEventListener('resize', onScroll);
 document.addEventListener('DOMContentLoaded', () => { onScroll(); });
+//! Quote Stuff
 var quotes = [
     "\"You can dance in the rain or sulk in the rain. It will rain regardless.\" -William Mulligan",
     "\"Hello there.\" -Mark Hoppus, from \"I Miss You\" by blink-182",
@@ -119,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.onclick = generateQuote;
     }
 });
-// START OF PRIMATE GAME CODE ---------------------------------------------------------------------------
+//! Primate Game Code (plus see the primate_data TS/JS files)
 var numHints = 0;
 var primateIndex = 0;
 var yourPrimate;
@@ -175,11 +177,27 @@ var gottenTails = 0;
 var gottenHabitat = 0;
 var gottenSocial = 0;
 document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("primateStartButton");
-    if (button) {
-        button.onclick = GameButtonPressed;
+    const start = document.getElementById("primateStartButton");
+    if (start) {
+        start.onclick = GameButtonPressed;
+    }
+    const guide = document.getElementById("toggleGuide");
+    if (guide) {
+        guide.onclick = toggleGuide;
     }
 });
+function toggleGuide() {
+    let button = document.getElementById("toggleGuide");
+    let guide = document.getElementById("guide");
+    if (guide.style.display === "none") {
+        button.textContent = "Hide Instructions";
+        guide.style.display = "block";
+    }
+    else {
+        button.textContent = "Show Instructions";
+        guide.style.display = "none";
+    }
+}
 function GameButtonPressed() {
     var _a;
     const startButton = document.getElementById("primateStartButton");
@@ -228,6 +246,8 @@ function SetupPrimateGame() {
     document.getElementById("hint6").textContent = "-";
     document.getElementById("hint7").textContent = "-";
     document.getElementById("hint8").textContent = "-";
+    document.getElementById("hint9").textContent = "-";
+    document.getElementById("hint10").textContent = "-";
     gottenGroup = 0;
     gottenPlaces = 0;
     gottenTimes = 0;
@@ -242,7 +262,11 @@ function SetupPrimateGame() {
 function GuessPrimate(guess, num_guesses) {
     console.log(guess);
     console.log(yourPrimate);
-    if (yourPrimate.name.toLowerCase().includes(guess.toLowerCase()) || guess.toLowerCase().toLowerCase().includes(yourPrimate.name.toLowerCase())) {
+    //allow both answers
+    if (guess == "chimp") {
+        guess = "chimpanzee";
+    }
+    if (yourPrimate.name.toLowerCase() == guess.toLowerCase()) {
         const guesses = document.getElementById("numGuesses");
         if (guesses != null) {
             num_guesses--;
@@ -257,7 +281,7 @@ function GuessPrimate(guess, num_guesses) {
     //loop through all primates, pull the data of your guess out
     for (let i = 0; i < primates.length; i++) {
         let currPrimate = primates[i];
-        if (primates[i].name.toLowerCase().includes(guess.toLowerCase()) || guess.toLowerCase().includes(primates[i].name.toLowerCase())) {
+        if (primates[i].name.toLowerCase() == guess.toLowerCase()) {
             //then compare attributes of your primate and your guess
             if (yourPrimate.group == currPrimate.group && !gottenGroup) {
                 numHints++;
@@ -325,13 +349,13 @@ function GuessPrimate(guess, num_guesses) {
                 const guesses = document.getElementById("numGuesses");
                 if (guesses != null) {
                     guesses.textContent = "You have run out of guesses! The primate was " + yourPrimate.name;
+                    const button = document.getElementById("primateStartButton");
+                    if (button != null) {
+                        button.textContent = "Play Again!";
+                    }
+                    return;
                 }
             }
-            //change some text to display num guesses
-            return;
         }
     }
-    //if we get here:
-    //change text to say "NO PRIMATE FOUND"
-    console.log("No primate found");
 }

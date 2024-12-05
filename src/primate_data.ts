@@ -523,7 +523,7 @@ export const kadabba: Primate = {
 };
 
 export const orrorin: Primate = {
-    name: "Orrorin tugenensis",
+    name: "Orrorin",
     group: Group.Hominin,
     place: Places.Africa,
     time: Times.Miocene,
@@ -537,7 +537,7 @@ export const orrorin: Primate = {
 };
 
 export const sahelanthropus: Primate = {
-    name: "Sahelanthropus tchadensis",
+    name: "Sahelanthropus",
     group: Group.Hominin,
     place: Places.Africa,
     time: Times.Miocene,

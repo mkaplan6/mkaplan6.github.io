@@ -51,6 +51,7 @@ import {
     proconsul,
 } from "./primate_data.js" ;
 
+//!Basic functionality 
 function isInViewport(element: Element): boolean {
     const rect = element.getBoundingClientRect();
     return ( rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 50 && rect.bottom >= -50 );
@@ -101,6 +102,7 @@ window.addEventListener('scroll', onScroll);
 window.addEventListener('resize', onScroll);
 document.addEventListener('DOMContentLoaded', () => { onScroll(); });
 
+//! Quote Stuff
 var quotes = [
     "\"You can dance in the rain or sulk in the rain. It will rain regardless.\" -William Mulligan",
     "\"Hello there.\" -Mark Hoppus, from \"I Miss You\" by blink-182",
@@ -177,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (button) { button.onclick = generateQuote; }
 });
 
-// START OF PRIMATE GAME CODE ---------------------------------------------------------------------------
+//! Primate Game Code (plus see the primate_data TS/JS files)
 var numHints = 0;
 var primateIndex = 0;
 var yourPrimate: Primate;  
@@ -234,10 +236,26 @@ var gottenHabitat = 0
 var gottenSocial = 0
 
 document.addEventListener("DOMContentLoaded", function() {
-    const button = document.getElementById("primateStartButton");
+    const start = document.getElementById("primateStartButton")
     
-    if (button) { button.onclick = GameButtonPressed; }
+    if (start) { start.onclick = GameButtonPressed; }
+
+    const guide = document.getElementById("toggleGuide")
+    
+    if (guide) { guide.onclick = toggleGuide; }
 });
+
+function toggleGuide() {
+    let button = document.getElementById("toggleGuide")
+    let guide = document.getElementById("guide")
+    if (guide.style.display === "none") {
+        button.textContent = "Hide Instructions"
+        guide.style.display = "block"
+    } else {
+        button.textContent = "Show Instructions"
+        guide.style.display = "none"
+    }
+}
 
 function GameButtonPressed() {
     const startButton = document.getElementById("primateStartButton");
@@ -287,6 +305,8 @@ function SetupPrimateGame() {
     document.getElementById("hint6").textContent = "-"
     document.getElementById("hint7").textContent = "-"
     document.getElementById("hint8").textContent = "-"      
+    document.getElementById("hint9").textContent = "-" 
+    document.getElementById("hint10").textContent = "-" 
 
     gottenGroup = 0
     gottenPlaces = 0
@@ -305,7 +325,12 @@ function GuessPrimate(guess: string, num_guesses: number) {
     console.log(guess)
     console.log(yourPrimate)
 
-    if (yourPrimate.name.toLowerCase().includes(guess.toLowerCase()) || guess.toLowerCase().toLowerCase().includes(yourPrimate.name.toLowerCase())) {
+    //allow both answers
+    if (guess == "chimp") {
+        guess = "chimpanzee"
+    }
+
+    if (yourPrimate.name.toLowerCase() == guess.toLowerCase()) {
 
         const guesses = document.getElementById("numGuesses")
         if (guesses != null) {
@@ -322,7 +347,7 @@ function GuessPrimate(guess: string, num_guesses: number) {
     //loop through all primates, pull the data of your guess out
     for (let i = 0; i < primates.length; i++) {
         let currPrimate = primates[i]
-        if (primates[i].name.toLowerCase().includes(guess.toLowerCase()) || guess.toLowerCase().includes(primates[i].name.toLowerCase())) {
+        if (primates[i].name.toLowerCase() == guess.toLowerCase()) {
 
             //then compare attributes of your primate and your guess
             if (yourPrimate.group == currPrimate.group && !gottenGroup) {
@@ -391,10 +416,14 @@ function GuessPrimate(guess: string, num_guesses: number) {
                 const guesses = document.getElementById("numGuesses");
                 if (guesses != null) {
                     guesses.textContent = "You have run out of guesses! The primate was " + yourPrimate.name
+                    const button = document.getElementById("primateStartButton");
+                    if (button != null) {
+                        button.textContent = "Play Again!";
+                    }
+                    return
                 }
 
             }
-            return
         }
     }
 }

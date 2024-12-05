@@ -478,7 +478,7 @@ export const kadabba = {
     socialStructure: SocialStructures.Solitary,
 };
 export const orrorin = {
-    name: "Orrorin tugenensis",
+    name: "Orrorin",
     group: Group.Hominin,
     place: Places.Africa,
     time: Times.Miocene,
@@ -491,7 +491,7 @@ export const orrorin = {
     socialStructure: SocialStructures.Solitary,
 };
 export const sahelanthropus = {
-    name: "Sahelanthropus tchadensis",
+    name: "Sahelanthropus",
     group: Group.Hominin,
     place: Places.Africa,
     time: Times.Miocene,

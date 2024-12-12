@@ -95,6 +95,16 @@
             In Spring of 2024, I led a team of 4 engineers over 8 weeks to construct a simplified Linux-like operating system (or kernel) from scratch in C and x86 Assembly. The final product (with over 13,000 lines of code) was a system that functions almost like a real kernel would. To implement it, we started with the basics: getting the system to boot by initializing the appropriate kernel-level data structures and initializing the hardware devices that handle interrupts. We then developed comprehensive device drivers for the keyboard, terminal, real-time clock, and timer. We implemented features to ensure security and speed, including virtual memory and file system abstractions. And the pièce de résistance of the project was support for running multiple processes simultaneously, including scheduling, system calls, and interrupt handling. </p>
         </div>
 
+        <div class="content" id="dist">
+            <div class="headerlink">
+                <h3>Distributed Stream Processing Framework</h3><!--</a>-->
+            </div>
+            <p style="display: inline-block;">
+            <!-- <img src="assets/391os.gif" alt="OS Project" style="float: right" id="image1"> -->
+            In Fall of 2024, I and one partner built a fault-tolerant stream processing framework from the ground up in Golang that runs on a cluster of 10 machines in parallel. By the end, it totalled over 4,600 lines of code, and is capable of processing many thousands of records of data within minutes (nothing compared to the likes of Apache Spark and other professional systems, but we were still proud). Users of the framework can input their own custom operations and their own input data. To support this stream processing system, we engineered a fault-tolerant distributed file system for safely and efficiently storing inputs, outputs, and intermediate data during the computations. This distributed file system was also strongly consistent, such that no machines ever accidently obtained outdated data. We also implemented the SWIM protocol, which provides efficient and fully-complete failure detection among nodes in the cluster. As nodes in the cluster left, failed, or rejoined the system, the distributed file system and stream processing framework would quickly handle the change so that everything continued to run effectively. This system may be the most complex coding project I've ever done. </p>
+        </div>
+
+
         <div class="content" id="elden">
             <div class="headerlink">
                 <a href=https://github.com/zuyouchen/225-final-proj target="_blank" rel="noopener noreferrer">

@@ -322,6 +322,8 @@ function SetupPrimateGame() {
 
 function GuessPrimate(guess: string, num_guesses: number) {
 
+    guess = guess.trim()
+
     //allow both answers
     if (guess == "chimp") {
         guess = "chimpanzee"

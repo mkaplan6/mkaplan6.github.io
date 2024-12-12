@@ -264,6 +264,7 @@ function GuessPrimate(guess, num_guesses) {
     if (guess == "chimp") {
         guess = "chimpanzee";
     }
+    guess = guess.trim();
     if (yourPrimate.name.toLowerCase() == guess.toLowerCase()) {
         const guesses = document.getElementById("numGuesses");
         if (guesses != null) {

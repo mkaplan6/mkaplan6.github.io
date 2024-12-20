@@ -86,6 +86,8 @@ export const human = {
     tail: Tails.None,
     habitat: Habitats.Urban,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 62,
+    averageCranialCapacityCc: 1350,
 };
 export const gorilla = {
     name: "gorilla",
@@ -99,6 +101,8 @@ export const gorilla = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 120,
+    averageCranialCapacityCc: 500,
 };
 export const chimp = {
     name: "chimpanzee",
@@ -112,6 +116,8 @@ export const chimp = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 43,
+    averageCranialCapacityCc: 400,
 };
 export const bonobo = {
     name: "bonobo",
@@ -125,6 +131,8 @@ export const bonobo = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 39,
+    averageCranialCapacityCc: 400,
 };
 export const orangutan = {
     name: "orangutan",
@@ -138,6 +146,8 @@ export const orangutan = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 57,
+    averageCranialCapacityCc: 400,
 };
 export const gibbon = {
     name: "gibbon",
@@ -151,6 +161,8 @@ export const gibbon = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.PairBonded,
+    averageBodyMassKg: 5.5,
+    averageCranialCapacityCc: 130,
 };
 export const siamang = {
     name: "siamang",
@@ -164,6 +176,8 @@ export const siamang = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.PairBonded,
+    averageBodyMassKg: 11,
+    averageCranialCapacityCc: 120,
 };
 export const baboon = {
     name: "baboon",
@@ -177,6 +191,8 @@ export const baboon = {
     tail: Tails.Normal,
     habitat: Habitats.Savannah,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 24,
+    averageCranialCapacityCc: 180,
 };
 export const mandrill = {
     name: "mandrill",
@@ -190,6 +206,8 @@ export const mandrill = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 20,
+    averageCranialCapacityCc: 200,
 };
 export const macaque = {
     name: "macaque",
@@ -203,6 +221,8 @@ export const macaque = {
     tail: Tails.Normal,
     habitat: Habitats.Mountains,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 7.7,
+    averageCranialCapacityCc: 130,
 };
 export const colobus = {
     name: "colobus monkey",
@@ -216,6 +236,8 @@ export const colobus = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 9,
+    averageCranialCapacityCc: 200,
 };
 export const spider = {
     name: "spider monkey",
@@ -229,6 +251,8 @@ export const spider = {
     tail: Tails.Prehensile,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 9,
+    averageCranialCapacityCc: 110,
 };
 export const capuchin = {
     name: "capuchin",
@@ -242,6 +266,8 @@ export const capuchin = {
     tail: Tails.Prehensile,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 3,
+    averageCranialCapacityCc: 67,
 };
 export const howler = {
     name: "howler monkey",
@@ -255,6 +281,8 @@ export const howler = {
     tail: Tails.Prehensile,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 7,
+    averageCranialCapacityCc: 50,
 };
 export const tamarin = {
     name: "tamarin",
@@ -268,6 +296,8 @@ export const tamarin = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.PairBonded,
+    averageBodyMassKg: 0.5,
+    averageCranialCapacityCc: 20,
 };
 export const squirrel = {
     name: "squirrel monkey",
@@ -281,6 +311,8 @@ export const squirrel = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 0.9,
+    averageCranialCapacityCc: 20,
 };
 export const tarsier = {
     name: "tarsier",
@@ -294,6 +326,8 @@ export const tarsier = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.PairBonded,
+    averageBodyMassKg: 0.12,
+    averageCranialCapacityCc: 4,
 };
 export const lemur = {
     name: "lemur",
@@ -307,6 +341,8 @@ export const lemur = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 2.2,
+    averageCranialCapacityCc: 25,
 };
 export const loris = {
     name: "loris",
@@ -320,6 +356,8 @@ export const loris = {
     tail: Tails.Normal,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 0.2,
+    averageCranialCapacityCc: 5,
 };
 export const neanderthal = {
     name: "Homo neanderthalensis",
@@ -333,6 +371,8 @@ export const neanderthal = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 77,
+    averageCranialCapacityCc: 1450,
 };
 export const erectus = {
     name: "Homo erectus",
@@ -346,6 +386,8 @@ export const erectus = {
     tail: Tails.None,
     habitat: Habitats.Savannah,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 55,
+    averageCranialCapacityCc: 900,
 };
 export const habilis = {
     name: "Homo habilis",
@@ -359,6 +401,8 @@ export const habilis = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 32,
+    averageCranialCapacityCc: 600,
 };
 export const robustus = {
     name: "Paranthropus robustus",
@@ -372,6 +416,8 @@ export const robustus = {
     tail: Tails.None,
     habitat: Habitats.Savannah,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 45,
+    averageCranialCapacityCc: 530,
 };
 export const boisei = {
     name: "Paranthropus boisei",
@@ -385,6 +431,8 @@ export const boisei = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 45,
+    averageCranialCapacityCc: 510,
 };
 export const sediba = {
     name: "Australopithecus sediba",
@@ -398,6 +446,8 @@ export const sediba = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 30,
+    averageCranialCapacityCc: 420,
 };
 export const garhi = {
     name: "Australopithecus garhi",
@@ -411,6 +461,8 @@ export const garhi = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 45,
+    averageCranialCapacityCc: 450,
 };
 export const africanus = {
     name: "Australopithecus africanus",
@@ -424,6 +476,8 @@ export const africanus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 36,
+    averageCranialCapacityCc: 450,
 };
 export const afarensis = {
     name: "Australopithecus afarensis",
@@ -437,6 +491,8 @@ export const afarensis = {
     tail: Tails.None,
     habitat: Habitats.Savannah,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 40,
+    averageCranialCapacityCc: 400,
 };
 export const anamensis = {
     name: "Australopithecus anamensis",
@@ -450,6 +506,8 @@ export const anamensis = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 47,
+    averageCranialCapacityCc: 370,
 };
 export const ramidus = {
     name: "Ardipithecus ramidus",
@@ -463,6 +521,8 @@ export const ramidus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 45,
+    averageCranialCapacityCc: 320,
 };
 export const kadabba = {
     name: "Ardipithecus kadabba",
@@ -476,6 +536,8 @@ export const kadabba = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 35,
+    averageCranialCapacityCc: 300,
 };
 export const orrorin = {
     name: "Orrorin",
@@ -489,6 +551,8 @@ export const orrorin = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 32,
+    averageCranialCapacityCc: 320,
 };
 export const sahelanthropus = {
     name: "Sahelanthropus",
@@ -502,6 +566,8 @@ export const sahelanthropus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 35,
+    averageCranialCapacityCc: 350,
 };
 export const gigantopithecus = {
     name: "Gigantopithecus",
@@ -515,6 +581,8 @@ export const gigantopithecus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 200,
+    averageCranialCapacityCc: 500,
 };
 export const dryopithecus = {
     name: "Dryopithecus",
@@ -528,6 +596,8 @@ export const dryopithecus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 40,
+    averageCranialCapacityCc: 300,
 };
 export const sivapithecus = {
     name: "Sivapithecus",
@@ -541,6 +611,8 @@ export const sivapithecus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.Solitary,
+    averageBodyMassKg: 45,
+    averageCranialCapacityCc: 350,
 };
 export const oreopithecus = {
     name: "Oreopithecus",
@@ -554,6 +626,8 @@ export const oreopithecus = {
     tail: Tails.None,
     habitat: Habitats.Wetland,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 30,
+    averageCranialCapacityCc: 300,
 };
 export const ouranopithecus = {
     name: "Ouranopithecus",
@@ -567,6 +641,8 @@ export const ouranopithecus = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 50,
+    averageCranialCapacityCc: 400,
 };
 export const proconsul = {
     name: "Proconsul",
@@ -580,4 +656,6 @@ export const proconsul = {
     tail: Tails.None,
     habitat: Habitats.Forest,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 25,
+    averageCranialCapacityCc: 200,
 };

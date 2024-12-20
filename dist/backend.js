@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 //! Primate Game Code (plus see the primate_data TS/JS files)
-var numHints = 0;
+var numHints = 2;
 var primateIndex = 0;
 var yourPrimate;
 var primates = [
@@ -238,7 +238,7 @@ function SetupPrimateGame() {
         guesses.style.color = "white";
         guesses.textContent = "Guesses Remaining: 6";
     }
-    numHints = 0;
+    numHints = 2;
     document.getElementById("syntaxHint").textContent = " ";
     document.getElementById("hint1").textContent = " ";
     document.getElementById("hint2").textContent = " ";
@@ -250,6 +250,8 @@ function SetupPrimateGame() {
     document.getElementById("hint8").textContent = " ";
     document.getElementById("hint9").textContent = " ";
     document.getElementById("hint10").textContent = " ";
+    document.getElementById("hint11").textContent = " ";
+    document.getElementById("hint12").textContent = " ";
     gottenGroup = 0;
     gottenPlaces = 0;
     gottenTimes = 0;
@@ -296,7 +298,17 @@ function FindClosestGuess(guess) {
     }
     return closest_primate;
 }
+function DetermineRangeRelationship(actual, guess, attribute) {
+    let twenty_per = 0.2 * actual;
+    if (guess <= actual + twenty_per && guess >= actual - twenty_per) {
+        return "similar-sized " + attribute + " to ";
+    }
+    else {
+        return (actual > guess) ? "larger " + attribute + " than " : "smaller " + attribute + " than ";
+    }
+}
 function GuessPrimate(guess, num_guesses) {
+    document.getElementById("hintText").style.visibility = "visible";
     document.getElementById("syntaxHint").textContent = " ";
     guess = guess.trim();
     guess = guess.toLowerCase();
@@ -329,7 +341,8 @@ function GuessPrimate(guess, num_guesses) {
         if (guesses != null) {
             num_guesses--;
             guesses.style.color = "green";
-            guesses.textContent = "You got it! The primate was " + yourPrimate.name + " and you had " + num_guesses.toString() + " guesses remaining.";
+            let guessText = (num_guesses == 1) ? "guess " : "guesses ";
+            guesses.textContent = "You got it! The primate was " + yourPrimate.name + " and you had " + num_guesses.toString() + " " + guessText + " remaining";
         }
         const button = document.getElementById("primateStartButton");
         if (button != null) {
@@ -342,64 +355,68 @@ function GuessPrimate(guess, num_guesses) {
         let currPrimate = primates[i];
         if (primates[i].name.toLowerCase() == guess || primates[i].name.toLocaleLowerCase() == (guess + " monkey")) {
             //then compare attributes of your primate and your guess
+            let bodyRelationship = DetermineRangeRelationship(yourPrimate.averageBodyMassKg, currPrimate.averageBodyMassKg, "body");
+            let brainRelationship = DetermineRangeRelationship(yourPrimate.averageCranialCapacityCc, currPrimate.averageCranialCapacityCc, "brain");
+            document.getElementById("hint1").textContent = "-has a " + bodyRelationship + currPrimate.name;
+            document.getElementById("hint2").textContent = "-has a " + brainRelationship + currPrimate.name;
             if (yourPrimate.group == currPrimate.group && !gottenGroup) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate is in the " + Group[yourPrimate.group] + " group, just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-is in the " + Group[yourPrimate.group] + " group, just like " + currPrimate.name;
                 gottenGroup = 1;
             }
             if (yourPrimate.place == currPrimate.place && !gottenPlaces) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate lived in " + Places[yourPrimate.place] + ", just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-lived in " + Places[yourPrimate.place] + ", just like " + currPrimate.name;
                 gottenPlaces = 1;
             }
             if (yourPrimate.time == currPrimate.time && !gottenTimes) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate lived during the " + Times[yourPrimate.time] + ", just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-lived during the " + Times[yourPrimate.time] + ", just like " + currPrimate.name;
                 gottenTimes = 1;
             }
             if (yourPrimate.diet == currPrimate.diet && !gottenDiets) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate ate a diet of " + Diets[yourPrimate.diet] + ", just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-ate a diet of " + Diets[yourPrimate.diet] + ", just like " + currPrimate.name;
                 gottenDiets = 1;
             }
             if (yourPrimate.dentalFormula == currPrimate.dentalFormula && !gottenDentalFormula) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate has a dental formula of " + DentalFormula[yourPrimate.dentalFormula] + ", just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-has a dental formula of " + DentalFormula[yourPrimate.dentalFormula] + ", just like " + currPrimate.name;
                 gottenDentalFormula = 1;
             }
             if (yourPrimate.tail == currPrimate.tail && !gottenTails) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate has the following type of tail: " + Tails[yourPrimate.tail] + ", just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-has the following type of tail: " + Tails[yourPrimate.tail] + ", just like " + currPrimate.name;
                 gottenTails = 1;
             }
             if (yourPrimate.pelvis == currPrimate.pelvis && !gottenPelvis) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate has a " + Pelvis[yourPrimate.pelvis] + " pelvis, just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-has a " + Pelvis[yourPrimate.pelvis] + " pelvis, just like " + currPrimate.name;
                 gottenPelvis = 1;
             }
             if (yourPrimate.locomotion == currPrimate.locomotion && !gottenLocomotion) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate is a " + Locomotion[yourPrimate.locomotion] + ", just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-is a " + Locomotion[yourPrimate.locomotion] + ", just like " + currPrimate.name;
                 gottenLocomotion = 1;
             }
             if (yourPrimate.habitat == currPrimate.habitat && !gottenHabitat) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate lives in a " + Habitats[yourPrimate.habitat] + " environment, just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-lives in a " + Habitats[yourPrimate.habitat] + " environment, just like " + currPrimate.name;
                 gottenHabitat = 1;
             }
             if (yourPrimate.socialStructure == currPrimate.socialStructure && !gottenSocial) {
                 numHints++;
                 let curr_hint = numHints.toString();
-                document.getElementById("hint" + curr_hint).textContent = "Your mystery primate lives in " + SocialStructures[yourPrimate.socialStructure] + " societies, just like " + currPrimate.name;
+                document.getElementById("hint" + curr_hint).textContent = "-lives in " + SocialStructures[yourPrimate.socialStructure] + " societies, just like " + currPrimate.name;
                 gottenSocial = 1;
             }
             num_guesses--;
@@ -407,6 +424,7 @@ function GuessPrimate(guess, num_guesses) {
             if (num_guesses == 0) {
                 const guesses = document.getElementById("numGuesses");
                 if (guesses != null) {
+                    guesses.style.color = "red";
                     guesses.textContent = "You have run out of guesses! The primate was " + yourPrimate.name;
                     const button = document.getElementById("primateStartButton");
                     if (button != null) {

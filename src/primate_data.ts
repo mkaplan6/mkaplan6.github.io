@@ -229,7 +229,7 @@ export const macaque: Primate = {
 };
 
 export const colobus: Primate = {
-    name: "colobus",
+    name: "colobus monkey",
     group: Group.Cercopith,
     place: Places.Africa,
     time: Times.Present,

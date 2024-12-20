@@ -205,7 +205,7 @@ export const macaque = {
     socialStructure: SocialStructures.MultiMaleMultiFemale,
 };
 export const colobus = {
-    name: "colobus",
+    name: "colobus monkey",
     group: Group.Cercopith,
     place: Places.Africa,
     time: Times.Present,

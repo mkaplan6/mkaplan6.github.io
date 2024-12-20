@@ -235,19 +235,21 @@ function SetupPrimateGame() {
     const guesses = document.getElementById("numGuesses");
     if (guesses != null) {
         guesses.style.visibility = "visible";
+        guesses.style.color = "white";
         guesses.textContent = "Guesses Remaining: 6";
     }
     numHints = 0;
-    document.getElementById("hint1").textContent = "-";
-    document.getElementById("hint2").textContent = "-";
-    document.getElementById("hint3").textContent = "-";
-    document.getElementById("hint4").textContent = "-";
-    document.getElementById("hint5").textContent = "-";
-    document.getElementById("hint6").textContent = "-";
-    document.getElementById("hint7").textContent = "-";
-    document.getElementById("hint8").textContent = "-";
-    document.getElementById("hint9").textContent = "-";
-    document.getElementById("hint10").textContent = "-";
+    document.getElementById("syntaxHint").textContent = " ";
+    document.getElementById("hint1").textContent = " ";
+    document.getElementById("hint2").textContent = " ";
+    document.getElementById("hint3").textContent = " ";
+    document.getElementById("hint4").textContent = " ";
+    document.getElementById("hint5").textContent = " ";
+    document.getElementById("hint6").textContent = " ";
+    document.getElementById("hint7").textContent = " ";
+    document.getElementById("hint8").textContent = " ";
+    document.getElementById("hint9").textContent = " ";
+    document.getElementById("hint10").textContent = " ";
     gottenGroup = 0;
     gottenPlaces = 0;
     gottenTimes = 0;
@@ -259,16 +261,74 @@ function SetupPrimateGame() {
     gottenHabitat = 0;
     gottenSocial = 0;
 }
+function EditDistance(a, b) {
+    let len_a = a.length;
+    let len_b = b.length;
+    let dp = Array.from({ length: len_a + 1 }, () => Array(len_b + 1).fill(0));
+    for (let i = 0; i <= len_a; i++) {
+        for (let j = 0; j <= len_b; j++) {
+            if (i == 0) {
+                dp[i][j] = j;
+            }
+            else if (j == 0) {
+                dp[i][j] = i;
+            }
+            else {
+                let insertion = dp[i][j - 1] + 1;
+                let deletion = dp[i - 1][j] + 1;
+                let replacement = dp[i - 1][j - 1] + ((a[i - 1] == b[j - 1]) ? 0 : 1);
+                dp[i][j] = Math.min(insertion, deletion, replacement);
+            }
+        }
+    }
+    return dp[len_a][len_b];
+}
+function FindClosestGuess(guess) {
+    let min_distance = 100; //obviously bigger than otherwise possible
+    let closest_primate = "none";
+    for (let i = 0; i < primates.length; i++) {
+        let primate_genus = (primates[i].name.split(" "))[0];
+        let curr_distance = EditDistance(primate_genus, guess);
+        if (curr_distance < min_distance) {
+            min_distance = curr_distance;
+            closest_primate = primate_genus;
+        }
+    }
+    return closest_primate;
+}
 function GuessPrimate(guess, num_guesses) {
+    document.getElementById("syntaxHint").textContent = " ";
     guess = guess.trim();
-    //allow both answers
+    guess = guess.toLowerCase();
+    //sanitize inputs
     if (guess == "chimp") {
         guess = "chimpanzee";
     }
-    if (yourPrimate.name.toLowerCase() == guess.toLowerCase()) {
+    else if (guess == "homo sapien" || guess == "homo sapiens") {
+        guess = "human";
+    }
+    else if (guess == "australopithecus") {
+        document.getElementById("syntaxHint").textContent = "Include the species! Options are sediba, garhi, africanus, afarensis, and anamensis";
+        return;
+    }
+    else if (guess == "ardipithecus") {
+        document.getElementById("syntaxHint").textContent = "Include the species! Options are ramidus and kadabba";
+        return;
+    }
+    else if (guess == "homo") {
+        document.getElementById("syntaxHint").textContent = "Include the species! Options are habilis, erectus, and neanderthalensis";
+        return;
+    }
+    else if (guess == "paranthropus") {
+        document.getElementById("syntaxHint").textContent = "Include the species! Options are robustus and boisei";
+        return;
+    }
+    //victory case
+    if (yourPrimate.name.toLowerCase() == guess) {
         const guesses = document.getElementById("numGuesses");
         if (guesses != null) {
             num_guesses--;
+            guesses.style.color = "green";
             guesses.textContent = "You got it! The primate was " + yourPrimate.name + " and you had " + num_guesses.toString() + " guesses remaining.";
         }
         const button = document.getElementById("primateStartButton");
@@ -277,10 +337,10 @@ function GuessPrimate(guess, num_guesses) {
         }
         return;
     }
-    //loop through all primates, pull the data of your guess out
+    //loop through all primates, pull the data of your guess out to give you hints
     for (let i = 0; i < primates.length; i++) {
         let currPrimate = primates[i];
-        if (primates[i].name.toLowerCase() == guess.toLowerCase()) {
+        if (primates[i].name.toLowerCase() == guess || primates[i].name.toLocaleLowerCase() == (guess + " monkey")) {
             //then compare attributes of your primate and your guess
             if (yourPrimate.group == currPrimate.group && !gottenGroup) {
                 numHints++;
@@ -355,6 +415,9 @@ function GuessPrimate(guess, num_guesses) {
                     return;
                 }
             }
+            return;
         }
     }
+    //if no primate found:
+    document.getElementById("syntaxHint").textContent = ("No primate found. Did you mean " + FindClosestGuess(guess) + "?");
 }

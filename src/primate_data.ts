@@ -574,7 +574,7 @@ export const kadabba: Primate = {
     name: "Ardipithecus kadabba",
     group: Group.Hominin,
     place: Places.Africa,
-    time: Times.Pliocene,
+    time: Times.Miocene,
     diet: Diets.Fruit_and_leaves,
     dentalFormula: DentalFormula.D2123,
     pelvis: Pelvis.Wide,

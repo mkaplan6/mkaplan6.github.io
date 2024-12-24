@@ -179,6 +179,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if (button) { button.onclick = generateQuote; }
 });
 
+document.addEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === "Enter") {
+        GameButtonPressed();
+    }
+});
+
 //! Primate Game Code (plus see the primate_data TS/JS files)
 var numHints = 2;
 var primateIndex = 0;
@@ -270,7 +276,6 @@ function GameButtonPressed() {
         if (!num_guesses) { num_guesses = "0" }
         let num_guesses_Int = parseInt(num_guesses)
         GuessPrimate(guess, num_guesses_Int)
-        
         
         const guessBox = document.getElementById("guessBox") as HTMLInputElement | null;
         if (guessBox) {

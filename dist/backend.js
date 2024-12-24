@@ -121,6 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
         button.onclick = generateQuote;
     }
 });
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        GameButtonPressed();
+    }
+});
 //! Primate Game Code (plus see the primate_data TS/JS files)
 var numHints = 2;
 var primateIndex = 0;

@@ -221,10 +221,6 @@ function GameButtonPressed() {
         }
         let num_guesses_Int = parseInt(num_guesses);
         GuessPrimate(guess, num_guesses_Int);
-        const guessBox = document.getElementById("guessBox");
-        if (guessBox) {
-            guessBox.value = "";
-        }
     }
 }
 function SetupPrimateGame() {
@@ -363,6 +359,10 @@ function GuessPrimate(guess, num_guesses) {
     for (let i = 0; i < primates.length; i++) {
         let currPrimate = primates[i];
         if (primates[i].name.toLowerCase() == guess || primates[i].name.toLocaleLowerCase() == (guess + " monkey")) {
+            const guessBox = document.getElementById("guessBox");
+            if (guessBox) {
+                guessBox.value = "";
+            }
             //then compare attributes of your primate and your guess
             let bodyRelationship = DetermineRangeRelationship(yourPrimate.averageBodyMassKg, currPrimate.averageBodyMassKg, "body");
             let brainRelationship = DetermineRangeRelationship(yourPrimate.averageCranialCapacityCc, currPrimate.averageCranialCapacityCc, "brain");

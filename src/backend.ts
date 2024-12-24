@@ -276,11 +276,6 @@ function GameButtonPressed() {
         if (!num_guesses) { num_guesses = "0" }
         let num_guesses_Int = parseInt(num_guesses)
         GuessPrimate(guess, num_guesses_Int)
-        
-        const guessBox = document.getElementById("guessBox") as HTMLInputElement | null;
-        if (guessBox) {
-            guessBox.value = "";
-        }
     }
 }
 
@@ -433,6 +428,10 @@ function GuessPrimate(guess: string, num_guesses: number) {
     for (let i = 0; i < primates.length; i++) {
         let currPrimate = primates[i]
         if (primates[i].name.toLowerCase() == guess || primates[i].name.toLocaleLowerCase() == (guess + " monkey")) {
+            const guessBox = document.getElementById("guessBox") as HTMLInputElement | null;
+            if (guessBox) {
+                guessBox.value = "";
+            }
 
             //then compare attributes of your primate and your guess
             let bodyRelationship = DetermineRangeRelationship(yourPrimate.averageBodyMassKg, currPrimate.averageBodyMassKg, "body")
@@ -526,4 +525,5 @@ function GuessPrimate(guess: string, num_guesses: number) {
     }
     //if no primate found:
     document.getElementById("syntaxHint").textContent = ("No primate found. Did you mean " + FindClosestGuess(guess) + "?")
+
 }

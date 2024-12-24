@@ -246,8 +246,24 @@ export const macaque: Primate = {
     tail: Tails.Normal,
     habitat: Habitats.Mountains,
     socialStructure: SocialStructures.MultiMaleMultiFemale,
-    averageBodyMassKg: 7.7,
+    averageBodyMassKg: 9,
     averageCranialCapacityCc: 130,
+};
+
+export const snubnosed: Primate = {
+    name: "snubnosed monkey",
+    group: Group.Cercopith,
+    place: Places.Asia,
+    time: Times.Present,
+    diet: Diets.Fruit_and_leaves,
+    dentalFormula: DentalFormula.D2123,
+    pelvis: Pelvis.Narrow,
+    locomotion: Locomotion.ArborealQuadruped,
+    tail: Tails.Normal,
+    habitat: Habitats.Forest,
+    socialStructure: SocialStructures.MultiMaleMultiFemale,
+    averageBodyMassKg: 13,
+    averageCranialCapacityCc: 125,
 };
 
 export const colobus: Primate = {

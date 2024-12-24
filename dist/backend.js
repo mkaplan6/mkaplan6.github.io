@@ -1,4 +1,4 @@
-import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, Habitats, SocialStructures, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
+import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, Habitats, SocialStructures, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, snubnosed, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
 //!Basic functionality 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
@@ -142,6 +142,7 @@ var primates = [
     mandrill,
     macaque,
     colobus,
+    snubnosed,
     spider,
     capuchin,
     howler,

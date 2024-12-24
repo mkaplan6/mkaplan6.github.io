@@ -216,6 +216,10 @@ function GameButtonPressed() {
         }
         let num_guesses_Int = parseInt(num_guesses);
         GuessPrimate(guess, num_guesses_Int);
+        const guessBox = document.getElementById("guessBox");
+        if (guessBox) {
+            guessBox.value = "";
+        }
     }
 }
 function SetupPrimateGame() {

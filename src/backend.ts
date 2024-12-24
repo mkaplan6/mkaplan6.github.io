@@ -270,6 +270,12 @@ function GameButtonPressed() {
         if (!num_guesses) { num_guesses = "0" }
         let num_guesses_Int = parseInt(num_guesses)
         GuessPrimate(guess, num_guesses_Int)
+        
+        
+        const guessBox = document.getElementById("guessBox") as HTMLInputElement | null;
+        if (guessBox) {
+            guessBox.value = "";
+        }
     }
 }
 

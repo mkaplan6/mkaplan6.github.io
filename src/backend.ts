@@ -433,7 +433,13 @@ function GuessPrimate(guess: string, num_guesses: number) {
             if (yourPrimate.group == currPrimate.group && !gottenGroup) {
                 numHints++
                 let curr_hint = numHints.toString()
-                document.getElementById("hint"+curr_hint).textContent = "-is in the " + Group[yourPrimate.group] + " group, just like "+currPrimate.name;
+
+                if (Group[yourPrimate.group] != "Ape") {
+                    document.getElementById("hint"+curr_hint).textContent = "-is in the " + Group[yourPrimate.group] + " group, just like "+currPrimate.name;
+                } else {
+                    //if we're an ape, notate that its specifically non-hominin apes
+                    document.getElementById("hint"+curr_hint).textContent = "-is in the Ape group (excluding hominins), just like "+currPrimate.name;
+                }
                 gottenGroup = 1
             }
             if (yourPrimate.place == currPrimate.place && !gottenPlaces) {

@@ -1,4 +1,4 @@
-import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, Habitats, SocialStructures, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, snubnosed, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
+import { Group, Places, Times, Diets, DentalFormula, Pelvis, Locomotion, Tails, Habitats, SocialStructures, human, gorilla, chimp, bonobo, orangutan, gibbon, siamang, baboon, mandrill, macaque, snubnosed, proboscis, colobus, spider, capuchin, howler, tamarin, squirrel, tarsier, lemur, loris, neanderthal, erectus, habilis, robustus, boisei, sediba, garhi, africanus, afarensis, anamensis, ramidus, kadabba, orrorin, sahelanthropus, gigantopithecus, dryopithecus, sivapithecus, oreopithecus, ouranopithecus, proconsul, } from "./primate_data.js";
 //!Basic functionality 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
@@ -143,6 +143,7 @@ var primates = [
     macaque,
     colobus,
     snubnosed,
+    proboscis,
     spider,
     capuchin,
     howler,
@@ -377,6 +378,7 @@ function GuessPrimate(guess, num_guesses) {
             if (guessBox) {
                 guessBox.value = "";
             }
+            document.getElementById("correctButton").style.visibility = "hidden";
             //then compare attributes of your primate and your guess
             let bodyRelationship = DetermineRangeRelationship(yourPrimate.averageBodyMassKg, currPrimate.averageBodyMassKg, "body");
             let brainRelationship = DetermineRangeRelationship(yourPrimate.averageCranialCapacityCc, currPrimate.averageCranialCapacityCc, "brain");

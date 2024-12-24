@@ -266,6 +266,23 @@ export const snubnosed: Primate = {
     averageCranialCapacityCc: 125,
 };
 
+export const proboscis: Primate = {
+    name: "proboscis monkey",
+    group: Group.Cercopith,
+    place: Places.Asia,
+    time: Times.Present,
+    diet: Diets.Fruit_and_leaves,
+    dentalFormula: DentalFormula.D2123,
+    pelvis: Pelvis.Narrow,
+    locomotion: Locomotion.ArborealQuadruped,
+    tail: Tails.Normal,
+    habitat: Habitats.Wetland,
+    socialStructure: SocialStructures.FissionFusion,
+    averageBodyMassKg: 20,
+    averageCranialCapacityCc: 140,
+};
+
+
 export const colobus: Primate = {
     name: "colobus monkey",
     group: Group.Cercopith,

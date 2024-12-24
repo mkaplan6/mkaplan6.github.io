@@ -21,6 +21,7 @@ import {
     mandrill,
     macaque,
     snubnosed,
+    proboscis,
     colobus,
     spider,
     capuchin,
@@ -203,6 +204,7 @@ var primates: Primate[] = [
     macaque,
     colobus,
     snubnosed,
+    proboscis,
     spider,
     capuchin,
     howler,
@@ -448,6 +450,7 @@ function GuessPrimate(guess: string, num_guesses: number) {
             if (guessBox) {
                 guessBox.value = "";
             }
+            document.getElementById("correctButton").style.visibility = "hidden";
 
             //then compare attributes of your primate and your guess
             let bodyRelationship = DetermineRangeRelationship(yourPrimate.averageBodyMassKg, currPrimate.averageBodyMassKg, "body")

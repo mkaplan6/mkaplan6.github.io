@@ -181,6 +181,7 @@ var gottenLocomotion = 0;
 var gottenTails = 0;
 var gottenHabitat = 0;
 var gottenSocial = 0;
+var didYouMean = "";
 document.addEventListener("DOMContentLoaded", function () {
     const start = document.getElementById("primateStartButton");
     if (start) {
@@ -189,6 +190,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const guide = document.getElementById("toggleGuide");
     if (guide) {
         guide.onclick = toggleGuide;
+    }
+    const correct = document.getElementById("correctButton");
+    if (correct) {
+        correct.onclick = AutoCorrect;
     }
 });
 function toggleGuide() {
@@ -267,6 +272,14 @@ function SetupPrimateGame() {
     gottenTails = 0;
     gottenHabitat = 0;
     gottenSocial = 0;
+}
+function AutoCorrect() {
+    const guessBox = document.getElementById("guessBox");
+    if (guessBox) {
+        guessBox.value = didYouMean;
+    }
+    document.getElementById("correctButton").style.visibility = "hidden";
+    GameButtonPressed();
 }
 function EditDistance(a, b) {
     let len_a = a.length;
@@ -452,5 +465,7 @@ function GuessPrimate(guess, num_guesses) {
         }
     }
     //if no primate found:
-    document.getElementById("syntaxHint").textContent = ("No primate found. Did you mean " + FindClosestGuess(guess) + "?");
+    didYouMean = FindClosestGuess(guess);
+    document.getElementById("syntaxHint").textContent = ("No primate found. Did you mean " + didYouMean + "?");
+    document.getElementById("correctButton").style.visibility = "visible";
 }

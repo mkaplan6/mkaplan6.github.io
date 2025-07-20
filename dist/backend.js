@@ -88,7 +88,11 @@ var quotes = [
     "\"Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.\" -The Buddha",
     "\"You are what you believe in. You become that which you believe you can become.\" -from the Bhagavad Gita",
     "\"In the darkest times, hope is something you give yourself. That is the meaning of inner strength.\" -Uncle Iroh",
-    "\"Pride is not the opposite of shame, but its source. True humility is the only antidote to shame.\" -Uncle Iroh"
+    "\"Pride is not the opposite of shame, but its source. True humility is the only antidote to shame.\" -Uncle Iroh",
+    "\"We saw the folly of men who rather than revel repine\" -Edgin and Holga",
+    "\"It is our choices, Harry, that show what we truly are, far more than our abilities.\" -Albus Dumbledore",
+    "\"Always.\" -Severus Snape",
+    "\"Of course it is happening inside your head Harry. But why on earth should that mean that it is not real?\" -Albus Dumbledore"
 ];
 function generateQuote() {
     var randomNumber = Math.floor(Math.random() * quotes.length);

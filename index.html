@@ -35,7 +35,7 @@
     <div id="about">
         <img src="assets/pfp.jpg" alt="Profile picture" style="width:255.75px;height:337px;" id="image1">
         <h1>Hello!</h1>
-        <p>My name is Malcolm and I'm a student of Computer Science and Anthropology at the University of Illinois at Urbana-Champaign (UIUC). On the computer science side, I'm primarily interested in computer systems and web/network programming. On the anthropology side, my focus is paleoanthropology, or the study of human evolution from the early apes to modern humans, primarily through fossils. No, there isn't really any overlap between those two parts, but maybe there will be one day. </p>
+        <p>My name is Malcolm and I'm a junior full stack software developer. I am a recent graduate of Computer Science and Anthropology at the University of Illinois at Urbana-Champaign (UIUC). On the computer science side, I'm primarily interested in computer systems and web/network programming. On the anthropology side, my focus is paleoanthropology, or the study of human evolution from the early apes to modern humans, primarily through fossils. No, there isn't really any overlap between those two parts, but maybe there will be one day. </p>
 
         <p>I actively work with C, C++, C#, Python, Go, Javascript/Typescript, HTML, and CSS, and in the past I've worked with Java, x86 and MIPS Assembly, VBA, Verilog, SQL, R, and GML. Outside of computer science, I also work a lot with multimedia editing tools such as Photoshop and Sony Vegas, which I use to create video essay projects for school and YouTube (fun fact: these YouTube videos have a total of over 1,000,000 views!).</p>
         <!-- PFP is originally 1023 by 1348 -->
@@ -44,6 +44,20 @@
 
     <div id="Experience">
         <h2>Work Experience</h2>
+
+        <div class="content" id="avtech">
+            <div class="headerlink">
+                <a href=https://www.avtechcorp.com/ target="_blank" rel="noopener noreferrer">
+                <h3>Junior Full Stack Software Developer at AvTech Corp.</h3></a>
+            </div>
+            <p style="display: inline-block";>
+            <img src="assets/avtech.jpg" alt="AvTech Logo" id="image2">
+            I've recently been hired to work full time at the company that I interned with for three summers. See below for more info on what I did during the internships! <br><br>
+            Now, I design, maintain, improve, and test production-grade full-stack applications for the aviation industry, with a focus on
+            efficient and user-friendly workflow management tools. I work primarily with Typescript, C#, and Java.
+            I also sometimes travel to assist in deploying applications and services in airports across the globe, working tirelessly to ensure a smooth and effective operation.
+        </p>
+        </div>
 
         <div class="content" id="avtech">
             <div class="headerlink">
@@ -103,6 +117,15 @@
             In Fall of 2024, I and one partner built a fault-tolerant stream processing framework from the ground up in Golang that runs on a cluster of 10 machines in parallel. By the end, it totalled over 4,600 lines of code, and is capable of processing many thousands of records of data within minutes (nothing compared to the likes of Apache Spark and other professional systems, but we were still proud). Users of the framework can input their own custom operations and their own input data. To support this stream processing system, we engineered a fault-tolerant distributed file system for safely and efficiently storing inputs, outputs, and intermediate data during the computations. This distributed file system was also strongly consistent, such that no machines ever accidently obtained outdated data. We also implemented the SWIM protocol, which provides efficient and fully-complete failure detection among nodes in the cluster. As nodes in the cluster left, failed, or rejoined the system, the distributed file system and stream processing framework would quickly handle the change so that everything continued to run effectively. This system may be the most complex coding project I've ever done. </p>
         </div>
 
+        <div class="content" id="moes-hollow">
+            <div class="headerlink">
+                <a href=https://www.youtube.com/watch?v=WBs0Q5k7_zQ target="_blank" rel="noopener noreferrer">
+                <h3>Moe's Hollow (A Point-and-Click Survival Horror Game)</h3></a>
+            </div>
+            <p style="display: inline-block;">
+            <img src="assets/moes-gif.gif" alt="Moe's Hollow" style="float: right; width: 225px; height: 150px;">
+            In middle school, I made a game in the style of Five Nights at Freddy's in Scratch, the tool that is used to teach kids how to program. Then, I forgot about this game for about 10 years. But in Spring of 2025, I decided I wanted to make a game in a real programming language, so I figured I could repurpose the visuals I made way back when and redo the coding from the ground up. The game is written entirely in C# with the Godot Game Engine and is roughly 10,000 lines of code. About 85% of the visuals are from the original, though often with minor tweaks. The game, like Five Nights at Freddy's, consists of the player being stationary with nothing but a camera system and a few other tools to survive from an increasingly chaotic onslaught of scary enemies for five (or more) nights. Click the title of this project to see the trailer for the game, which itself has a link in the description to its GameJolt page where it will be uploaded to and be free to download.</p>
+        </div>
 
         <div class="content" id="elden">
             <div class="headerlink">
@@ -157,7 +180,7 @@
             </div>
             <p style="display: inline-block;">
             <img src="assets/acm.png" alt="ACM Logo" id="image2">
-            During my time at UIUC, I've been involved in the largest computer science student organization on campus, primarily in the special interest groups SIGARCH (the special interest group for computer architecture), SIGCHI (the special interest group for computer-human interaction), and Game Builders. In these clubs, we work on various software and hardware projects as well as read academic papers and discuss the respective fields in detail.</p>
+            During my time at UIUC, I was involved in the largest computer science student organization on campus, primarily in the special interest groups SIGARCH (the special interest group for computer architecture), SIGCHI (the special interest group for computer-human interaction), and Game Builders. In these clubs, we worked on various software and hardware projects as well as read academic papers and discuss the respective fields in detail.</p>
         </div>
 
         <div class="content">
@@ -167,7 +190,7 @@
             </div>
             <p style="display: inline-block;">
             <img src="assets/classics.png" alt="Classics Logo" id="image3">
-            Since Fall of 2023, I have been serving as the treasurer of the Illini Classics Club, which is the organization for students on campus interested in classical texts, cultures, philosophies, and all that fun stuff. </p>
+            From Fall of 2023 until my graduation in May 2025, I served as the treasurer of the Illini Classics Club, which is the organization for students on campus interested in classical texts, cultures, philosophies, and all that fun stuff. </p>
         </div>
 
         <HR SIZE="2" width="100%">
@@ -178,7 +201,7 @@
         <!--<img src="assets/coinroll.gif" alt="Coin Roll" id="image2"> -->
         <!-- <p>By the way, the answer I was looking for as a follow-up to "Hello there" is "General Kenobi" or "The angel from my nightmare."</p> -->
 
-        <p>If I'm not doing any of the above activites, I'm probably playing some instrument (drums, guitar, or piano) or some challenging video game (Elden Ring, Dark Souls, Sekiro, Hollow Knight, Hades, Dead Cells, and others). I can also roll a quarter across my knuckles like Val Kilmer, I know the locations of all 193 U.N. countries on the world map, and if you send me a picture of any random primate, I can probably tell you what species it is.</p>
+        <p>If I'm not doing any of the above activites, I'm probably playing some instrument (guitar, piano, or drums) or some challenging video game (Elden Ring, Dark Souls, Sekiro, Hollow Knight, Hades, Dead Cells, and others). I can also roll a quarter across my knuckles like Val Kilmer, I know the locations of all 193 U.N. countries on the world map, and if you send me a picture of any random primate, I can probably tell you what species it is.</p>
 
         <p>Website created in July of 2023 from scratch using HTML, CSS, and JavaScript/Typescript. Hosted using GitHub Pages. Last updated in November of 2024. Based on an earlier version of the site I created using the React framework in November of 2022. All pieces of media on this site are either created by me or in the public domain. Royalty free images from Pexels or Pixabay. </p>
 

@@ -135,3 +135,14 @@ p {
     margin-bottom: 50px;
     margin-top: 0px;
 }
+
+#image5 {
+    float: right;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+    width: 150px;
+    height: 150px;
+    vertical-align: middle;
+}
